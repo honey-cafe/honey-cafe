@@ -1,1 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey Café - Where Every Sip Tells a Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Honey Café</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#testimonials" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title animate-on-scroll">Welcome to Honey Café</h1>
+            <p class="hero-subtitle animate-on-scroll">Where every sip tells a story</p>
+            <a href="#menu" class="btn btn-primary animate-on-scroll">Order Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80" alt="Artisan Coffee" class="hero-img">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Café Interior" class="about-img about-img-1">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&q=80" alt="Coffee Beans" class="about-img about-img-2">
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="about-text">
+                        Founded in 2018, Honey Café began with a simple dream: to create a space where exceptional coffee meets warm hospitality. Nestled in the heart of the city, we've become more than just a café—we're a community gathering place.
+                    </p>
+                    <p class="about-text">
+                        We source our beans from sustainable farms across Ethiopia, Colombia, and Guatemala, roasting them in small batches to ensure peak flavor. Our skilled baristas craft each cup with precision and passion, while our pastry chef creates daily fresh delights using locally-sourced ingredients.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <span class="feature-icon">☕</span>
+                            <span class="feature-text">Artisan Roasted</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌱</span>
+                            <span class="feature-text">Sustainably Sourced</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🥐</span>
+                            <span class="feature-text">Fresh Daily</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Menu</h2>
+            <p class="section-subtitle text-center">Carefully crafted with love and the finest ingredients</p>
+            
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <div class="menu-item animate-on-scroll">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80" alt="Signature Espresso">
+                        <div class="menu-overlay">
+                            <span class="menu-price">$4.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Signature Espresso</h3>
+                        <p class="menu-description">Rich, bold single-origin espresso with notes of chocolate and caramel</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="menu-item animate-on-scroll">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1515823664972-6d66e79bc394?w=500&q=80" alt="Matcha Latte">
+                        <div class="menu-overlay">
+                            <span class="menu-price">$5.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Ceremonial Matcha Latte</h3>
+                        <p class="menu-description">Premium Japanese matcha whisked with steamed oat milk and honey</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="menu-item animate-on-scroll">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f40388085?w=500&q=80" alt="Butter Croissant">
+                        <div class="menu-overlay">
+                            <span class="menu-price">$3.75</span>
+                        </div>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Butter Croissant</h3>
+                        <p class="menu-description">Flaky, golden pastry made with French butter, baked fresh every morning</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="menu-item animate-on-scroll">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1565958011703-44f5a201a25b?w=500&q=80" alt="New York Cheesecake">
+                        <div class="menu-overlay">
+                            <span class="menu-price">$6.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">New York Cheesecake</h3>
+                        <p class="menu-description">Creamy classic cheesecake with berry compote and graham crust</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="menu-item animate-on-scroll">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" alt="Avocado Sandwich">
+                        <div class="menu-overlay">
+                            <span class="menu-price">$9.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Avocado Toast Deluxe</h3>
+                        <p class="menu-description">Sourdough bread, smashed avocado, poached egg, cherry tomatoes, and microgreens</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="menu-item animate-on-scroll">
+                    <div class="menu-image">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80" alt="Iced Latte">
+                        <div class="menu-overlay">
+                            <span class="menu-price">$5.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-info">
+                        <h3 class="menu-name">Honey Iced Latte</h3>
+                        <p class="menu-description">Espresso over ice with cold milk and a drizzle of local wildflower honey</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="#" class="btn btn-secondary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title text-center">Our Space</h2>
+            <p class="section-subtitle text-center">A cozy corner for coffee lovers</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&q=80" alt="Café Interior">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Coffee Art">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80" alt="Pastries">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Coffee Cup">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=80" alt="Seating Area">
+                </div>
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600&q=80" alt="Outdoor Seating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Guests Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"The best coffee in the city! The atmosphere is so warm and inviting. I come here every morning before work."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah M.">
+                        <div>
+                            <h4>Sarah Mitchell</h4>
+                            <span>Regular Customer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Their matcha latte is absolutely divine. The pastries are fresh and the staff remembers your name. A true gem!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James L.">
+                        <div>
+                            <h4>James Liu</h4>
+                            <span>Food Blogger</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Perfect spot for remote work. Great WiFi, comfortable seating, and the iced latte keeps me going all afternoon."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emma R.">
+                        <div>
+                            <h4>Emma Rodriguez</h4>
+                            <span>Freelance Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Visit Us</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Brew Street, Coffee District<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <h4>Opening Hours</h4>
+                            <p>Mon - Fri: 7:00 AM - 7:00 PM<br>Sat - Sun: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@honeycafe.com</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send us a Message</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Honey Café</h3>
+                    <p>Crafting moments of joy, one cup at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Honey Café. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
