@@ -1,346 +1,2484 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Honey Café - Where Every Sip Tells a Story</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Honey Café — Coffee, Brunch & Good Things</title>
+
+  <meta
+    name="description"
+    content="Honey Café — a warm neighborhood café serving specialty coffee, brunch and beautifully made things."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #f5f0e8;
+      color: #29241f;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+
+    /* =====================================================
+       VARIABLES
+       ===================================================== */
+
+    :root {
+      --cream: #f5f0e8;
+      --cream-light: #faf7f1;
+      --brown: #29241f;
+      --brown-soft: #665d53;
+      --honey: #c99545;
+      --honey-light: #e7c98d;
+      --line: rgba(41, 36, 31, 0.16);
+      --white: #fffdf9;
+    }
+
+
+    /* =====================================================
+       ANNOUNCEMENT BAR
+       ===================================================== */
+
+    .announcement {
+      width: 100%;
+      background: var(--brown);
+      color: #f9f4eb;
+
+      height: 36px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+       ===================================================== */
+
+    .nav {
+      position: absolute;
+      top: 36px;
+      left: 0;
+      width: 100%;
+
+      z-index: 100;
+
+      padding: 25px 5vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: white;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+
+      font-size: 10px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -6px;
+
+      width: 0;
+      height: 1px;
+
+      background: white;
+
+      transition: width .3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-button {
+      border: 1px solid rgba(255,255,255,.7);
+
+      padding: 12px 20px;
+
+      font-size: 9px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+
+      transition: all .3s ease;
+    }
+
+    .nav-button:hover {
+      background: white;
+      color: var(--brown);
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+      position: relative;
+
+      min-height: calc(100vh - 36px);
+      min-height: calc(100svh - 36px);
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(22,17,12,.68) 0%,
+          rgba(22,17,12,.28) 50%,
+          rgba(22,17,12,.08) 100%
+        ),
+        url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=2200&q=90")
+        center / cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+      max-width: 1400px;
+
+      margin: 0 auto;
+
+      padding: 120px 7vw 70px;
+
+      color: white;
+    }
+
+    .hero-kicker {
+      font-size: 10px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+
+      margin-bottom: 24px;
+
+      opacity: .85;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(65px, 9vw, 135px);
+
+      font-weight: 400;
+
+      line-height: .88;
+
+      letter-spacing: -.055em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 450px;
+
+      margin-top: 30px;
+
+      font-size: 15px;
+
+      line-height: 1.7;
+
+      color: rgba(255,255,255,.88);
+    }
+
+    .hero-actions {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin-top: 35px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-width: 160px;
+
+      padding: 16px 25px;
+
+      border: 1px solid white;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      transition: all .35s ease;
+    }
+
+    .button-primary {
+      background: white;
+      color: var(--brown);
+    }
+
+    .button-primary:hover {
+      background: transparent;
+      color: white;
+    }
+
+    .button-outline:hover {
+      background: white;
+      color: var(--brown);
+    }
+
+    .hero-bottom {
+      position: absolute;
+
+      bottom: 28px;
+      left: 7vw;
+
+      z-index: 3;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      color: rgba(255,255,255,.7);
+    }
+
+    .hero-bottom-line {
+      width: 55px;
+      height: 1px;
+
+      background: rgba(255,255,255,.6);
+    }
+
+
+    /* =====================================================
+       GENERAL SECTION
+       ===================================================== */
+
+    section {
+      width: 100%;
+    }
+
+    .section-inner {
+      width: 100%;
+      max-width: 1500px;
+
+      margin: auto;
+
+      padding: 120px 6vw;
+    }
+
+    .eyebrow {
+      font-size: 9px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+
+      color: var(--brown-soft);
+
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+
+      font-weight: 400;
+
+      font-size: clamp(45px, 6vw, 85px);
+
+      line-height: .95;
+
+      letter-spacing: -.045em;
+    }
+
+
+    /* =====================================================
+       INTRO
+       ===================================================== */
+
+    .intro {
+      background: var(--cream-light);
+    }
+
+    .intro-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 100px;
+
+      align-items: center;
+    }
+
+    .intro-text {
+      max-width: 560px;
+    }
+
+    .intro-copy {
+      margin-top: 28px;
+
+      font-size: 16px;
+
+      line-height: 1.9;
+
+      color: var(--brown-soft);
+    }
+
+    .intro-signature {
+      margin-top: 35px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: 26px;
+
+      font-style: italic;
+    }
+
+    .intro-image {
+      height: 650px;
+
+      overflow: hidden;
+    }
+
+    .intro-image img {
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 1s ease;
+    }
+
+    .intro-image:hover img {
+      transform: scale(1.04);
+    }
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .menu {
+      background: var(--cream);
+    }
+
+    .menu-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: end;
+
+      margin-bottom: 65px;
+    }
+
+    .menu-note {
+      max-width: 260px;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      color: var(--brown-soft);
+    }
+
+    .menu-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      column-gap: 90px;
+      row-gap: 0;
+    }
+
+    .menu-category {
+      margin-bottom: 60px;
+    }
+
+    .menu-category-title {
+      font-family: "Playfair Display", serif;
+
+      font-size: 28px;
+
+      font-weight: 400;
+
+      padding-bottom: 17px;
+
+      border-bottom: 1px solid var(--line);
+
+      margin-bottom: 10px;
+    }
+
+    .menu-item {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      padding: 19px 0;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-item-name {
+      font-size: 13px;
+
+      font-weight: 500;
+
+      margin-bottom: 5px;
+    }
+
+    .menu-item-description {
+      font-size: 11px;
+
+      color: var(--brown-soft);
+
+      line-height: 1.5;
+    }
+
+    .menu-price {
+      font-family: "Playfair Display", serif;
+
+      font-size: 16px;
+
+      white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       FEATURED IMAGE
+       ===================================================== */
+
+    .feature {
+      position: relative;
+
+      height: 80vh;
+      min-height: 600px;
+
+      overflow: hidden;
+
+      background:
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90")
+        center / cover no-repeat;
+    }
+
+    .feature::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(24,18,12,.62),
+          rgba(24,18,12,.08)
+        );
+    }
+
+    .feature-content {
+      position: relative;
+
+      z-index: 2;
+
+      height: 100%;
+
+      max-width: 1500px;
+
+      margin: auto;
+
+      padding: 100px 7vw;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      color: white;
+    }
+
+    .feature-title {
+      max-width: 700px;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(55px, 7vw, 100px);
+
+      line-height: .9;
+
+      font-weight: 400;
+
+      letter-spacing: -.05em;
+    }
+
+    .feature-copy {
+      max-width: 430px;
+
+      margin-top: 25px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color: rgba(255,255,255,.82);
+    }
+
+
+    /* =====================================================
+       GALLERY
+       ===================================================== */
+
+    .gallery {
+      background: var(--cream-light);
+    }
+
+    .gallery-header {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: end;
+
+      margin-bottom: 50px;
+    }
+
+    .gallery-grid {
+      display: grid;
+
+      grid-template-columns: 1.15fr .85fr;
+
+      grid-template-rows: 320px 320px;
+
+      gap: 15px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform .8s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+
+    /* =====================================================
+       TESTIMONIALS
+       ===================================================== */
+
+    .reviews {
+      background: var(--brown);
+
+      color: white;
+    }
+
+    .reviews .eyebrow {
+      color: #cfc5b7;
+    }
+
+    .reviews-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 40px;
+
+      margin-top: 65px;
+    }
+
+    .review {
+      border-top: 1px solid rgba(255,255,255,.25);
+
+      padding-top: 28px;
+    }
+
+    .review-stars {
+      color: var(--honey-light);
+
+      font-size: 13px;
+
+      letter-spacing: .15em;
+
+      margin-bottom: 25px;
+    }
+
+    .review-text {
+      font-family: "Playfair Display", serif;
+
+      font-size: 22px;
+
+      line-height: 1.45;
+
+      font-style: italic;
+
+      color: #f6f0e8;
+    }
+
+    .review-author {
+      margin-top: 30px;
+
+      font-size: 9px;
+
+      letter-spacing: .2em;
+
+      text-transform: uppercase;
+
+      color: #aaa096;
+    }
+
+
+    /* =====================================================
+       RESERVATION
+       ===================================================== */
+
+    .reservation {
+      background: var(--cream-light);
+    }
+
+    .reservation-grid {
+      display: grid;
+
+      grid-template-columns: .8fr 1.2fr;
+
+      gap: 100px;
+
+      align-items: start;
+    }
+
+    .reservation-description {
+      max-width: 400px;
+
+      margin-top: 25px;
+
+      color: var(--brown-soft);
+
+      line-height: 1.8;
+
+      font-size: 14px;
+    }
+
+    .reservation-info {
+      margin-top: 40px;
+
+      display: grid;
+
+      gap: 18px;
+    }
+
+    .info-row {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-bottom: 15px;
+
+      border-bottom: 1px solid var(--line);
+
+      font-size: 12px;
+    }
+
+    .info-label {
+      color: var(--brown-soft);
+
+      text-transform: uppercase;
+
+      letter-spacing: .12em;
+
+      font-size: 9px;
+    }
+
+    .reservation-form {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .field {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 8px;
+    }
+
+    .field.full {
+      grid-column: span 2;
+    }
+
+    .field label {
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .18em;
+
+      color: var(--brown-soft);
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+
+      width: 100%;
+
+      border: none;
+
+      border-bottom: 1px solid var(--line);
+
+      background: transparent;
+
+      padding: 13px 0;
+
+      outline: none;
+
+      color: var(--brown);
+
+      font-size: 13px;
+    }
+
+    .field textarea {
+      min-height: 100px;
+
+      resize: vertical;
+    }
+
+    .submit-button {
+      margin-top: 15px;
+
+      border: none;
+
+      background: var(--brown);
+
+      color: white;
+
+      padding: 17px 30px;
+
+      cursor: pointer;
+
+      font-size: 9px;
+
+      letter-spacing: .18em;
+
+      text-transform: uppercase;
+
+      transition: all .3s ease;
+    }
+
+    .submit-button:hover {
+      background: var(--honey);
+    }
+
+
+    /* =====================================================
+       LOCATION
+       ===================================================== */
+
+    .location {
+      background: #e8dfd1;
+    }
+
+    .location-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 70px;
+
+      align-items: stretch;
+    }
+
+    .location-map {
+      min-height: 480px;
+
+      background:
+        linear-gradient(
+          rgba(30,25,20,.1),
+          rgba(30,25,20,.1)
+        ),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=85")
+        center / cover;
+    }
+
+    .location-content {
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+    .address {
+      font-family: "Playfair Display", serif;
+
+      font-size: 30px;
+
+      line-height: 1.35;
+
+      margin-top: 25px;
+    }
+
+    .hours {
+      margin-top: 40px;
+
+      display: grid;
+
+      gap: 13px;
+
+      max-width: 360px;
+    }
+
+    .hours-row {
+      display: flex;
+
+      justify-content: space-between;
+
+      border-bottom: 1px solid rgba(41,36,31,.15);
+
+      padding-bottom: 10px;
+
+      font-size: 12px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+      background: #211d19;
+
+      color: #f4eee5;
+    }
+
+    .footer-inner {
+      max-width: 1500px;
+
+      margin: auto;
+
+      padding: 80px 6vw 35px;
+    }
+
+    .footer-top {
+      display: grid;
+
+      grid-template-columns: 1.5fr 1fr 1fr;
+
+      gap: 70px;
+
+      padding-bottom: 70px;
+
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+
+    .footer-logo {
+      font-family: "Playfair Display", serif;
+
+      font-size: 60px;
+
+      line-height: 1;
+    }
+
+    .footer-tagline {
+      max-width: 300px;
+
+      margin-top: 20px;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      color: #aaa096;
+    }
+
+    .footer-heading {
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .2em;
+
+      color: #a69b90;
+
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: grid;
+
+      gap: 11px;
+
+      font-size: 12px;
+    }
+
+    .footer-links a {
+      transition: color .25s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--honey-light);
+    }
+
+    .footer-bottom {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding-top: 25px;
+
+      font-size: 9px;
+
+      color: #83786e;
+
+      letter-spacing: .08em;
+    }
+
+
+    /* =====================================================
+       ANIMATIONS
+       ===================================================== */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(25px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 800px) {
+
+      .announcement {
+        height: 32px;
+
+        font-size: 8px;
+
+        letter-spacing: .12em;
+      }
+
+      .nav {
+        top: 32px;
+
+        padding:
+          20px 6vw;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .nav-button {
+        padding: 10px 14px;
+      }
+
+      .hero {
+        min-height: calc(100svh - 32px);
+      }
+
+      .hero-content {
+        padding:
+          130px 7vw 70px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(
+            60px,
+            17vw,
+            95px
+          );
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .section-inner {
+        padding:
+          80px 7vw;
+      }
+
+      .intro-grid,
+      .reservation-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .intro-image {
+        height: 480px;
+      }
+
+      .menu-header,
+      .gallery-header {
+        display: block;
+      }
+
+      .menu-note {
+        margin-top: 20px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+      }
+
+      .feature {
+        height: 650px;
+
+        min-height: 0;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows:
+          400px
+          250px
+          250px;
+      }
+
+      .gallery-item.large {
+        grid-row: auto;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .reservation-form {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .location-map {
+        min-height: 350px;
+
+        order: 2;
+      }
+
+      .location-content {
+        order: 1;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .footer-logo {
+        font-size: 50px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL SCREENS
+       ===================================================== */
+
+    @media (max-width: 420px) {
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .hero-description {
+        max-width: 330px;
+      }
+
+      .section-title {
+        font-size: 47px;
+      }
+
+      .intro-image {
+        height: 390px;
+      }
+
+      .feature-title {
+        font-size: 55px;
+      }
+
+    }
+
+  </style>
 </head>
+
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Honey Café</a>
-            <div class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#menu" class="nav-link">Menu</a>
-                <a href="#gallery" class="nav-link">Gallery</a>
-                <a href="#testimonials" class="nav-link">Reviews</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+
+
+<!-- =====================================================
+     ANNOUNCEMENT
+     ===================================================== -->
+
+<div class="announcement">
+  Fresh coffee · Slow mornings · Open daily
+</div>
+
+
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+
+<header class="nav">
+
+  <a href="#" class="logo">
+    Honey
+  </a>
+
+  <nav class="nav-links">
+
+    <a href="#about">
+      About
+    </a>
+
+    <a href="#menu">
+      Menu
+    </a>
+
+    <a href="#gallery">
+      Gallery
+    </a>
+
+    <a href="#visit">
+      Visit
+    </a>
+
+  </nav>
+
+  <a href="#reservation" class="nav-button">
+    Reserve a Table
+  </a>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<main>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-kicker">
+      Coffee · Brunch · Bakery
+    </div>
+
+    <h1>
+      Good things<br>
+      <em>take time.</em>
+    </h1>
+
+    <p class="hero-description">
+      Welcome to Honey — a warm little café for beautifully
+      made coffee, slow mornings, long lunches and sweet moments.
+    </p>
+
+    <div class="hero-actions">
+
+      <a
+        href="#menu"
+        class="button button-primary"
+      >
+        Explore Menu
+      </a>
+
+      <a
+        href="#reservation"
+        class="button button-outline"
+      >
+        Find a Table
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-bottom">
+
+    <span class="hero-bottom-line"></span>
+
+    Yerevan · Armenia
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+     ===================================================== -->
+
+<section class="intro" id="about">
+
+  <div class="section-inner">
+
+    <div class="intro-grid">
+
+      <div class="intro-text reveal">
+
+        <div class="eyebrow">
+          Our story
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title animate-on-scroll">Welcome to Honey Café</h1>
-            <p class="hero-subtitle animate-on-scroll">Where every sip tells a story</p>
-            <a href="#menu" class="btn btn-primary animate-on-scroll">Order Now</a>
+        <h2 class="section-title">
+          A little place<br>
+          with a lot of heart.
+        </h2>
+
+        <p class="intro-copy">
+          Honey was created around a simple idea:
+          good coffee tastes better when there is nowhere
+          you need to rush to.
+
+          <br><br>
+
+          We bring together specialty coffee, seasonal food,
+          warm interiors and the kind of atmosphere that makes
+          you want to stay for one more cup.
+        </p>
+
+        <div class="intro-signature">
+          See you at Honey.
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80" alt="Artisan Coffee" class="hero-img">
+
+      </div>
+
+
+      <div class="intro-image reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1400&q=85"
+          alt="Honey Café interior"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MENU
+     ===================================================== -->
+
+<section class="menu" id="menu">
+
+  <div class="section-inner">
+
+    <div class="menu-header reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          What we're serving
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-images">
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="Café Interior" class="about-img about-img-1">
-                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&q=80" alt="Coffee Beans" class="about-img about-img-2">
-                </div>
-                <div class="about-content">
-                    <h2 class="section-title">Our Story</h2>
-                    <p class="about-text">
-                        Founded in 2018, Honey Café began with a simple dream: to create a space where exceptional coffee meets warm hospitality. Nestled in the heart of the city, we've become more than just a café—we're a community gathering place.
-                    </p>
-                    <p class="about-text">
-                        We source our beans from sustainable farms across Ethiopia, Colombia, and Guatemala, roasting them in small batches to ensure peak flavor. Our skilled baristas craft each cup with precision and passion, while our pastry chef creates daily fresh delights using locally-sourced ingredients.
-                    </p>
-                    <div class="about-features">
-                        <div class="feature">
-                            <span class="feature-icon">☕</span>
-                            <span class="feature-text">Artisan Roasted</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">🌱</span>
-                            <span class="feature-text">Sustainably Sourced</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">🥐</span>
-                            <span class="feature-text">Fresh Daily</span>
-                        </div>
-                    </div>
-                </div>
+        <h2 class="section-title">
+          The menu.
+        </h2>
+
+      </div>
+
+      <p class="menu-note">
+        Seasonal ingredients, familiar favorites
+        and a few things you might not expect.
+      </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+      <!-- COFFEE -->
+
+      <div class="menu-category reveal">
+
+        <h3 class="menu-category-title">
+          Coffee
+        </h3>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Espresso
             </div>
+
+            <div class="menu-item-description">
+              Rich, balanced & classic
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $3
+          </div>
+
         </div>
-    </section>
 
-    <!-- Menu Section -->
-    <section class="menu" id="menu">
-        <div class="container">
-            <h2 class="section-title text-center">Featured Menu</h2>
-            <p class="section-subtitle text-center">Carefully crafted with love and the finest ingredients</p>
-            
-            <div class="menu-grid">
-                <!-- Item 1 -->
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&q=80" alt="Signature Espresso">
-                        <div class="menu-overlay">
-                            <span class="menu-price">$4.50</span>
-                        </div>
-                    </div>
-                    <div class="menu-info">
-                        <h3 class="menu-name">Signature Espresso</h3>
-                        <p class="menu-description">Rich, bold single-origin espresso with notes of chocolate and caramel</p>
-                    </div>
-                </div>
 
-                <!-- Item 2 -->
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1515823664972-6d66e79bc394?w=500&q=80" alt="Matcha Latte">
-                        <div class="menu-overlay">
-                            <span class="menu-price">$5.50</span>
-                        </div>
-                    </div>
-                    <div class="menu-info">
-                        <h3 class="menu-name">Ceremonial Matcha Latte</h3>
-                        <p class="menu-description">Premium Japanese matcha whisked with steamed oat milk and honey</p>
-                    </div>
-                </div>
+        <div class="menu-item">
 
-                <!-- Item 3 -->
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1555507036-ab1f40388085?w=500&q=80" alt="Butter Croissant">
-                        <div class="menu-overlay">
-                            <span class="menu-price">$3.75</span>
-                        </div>
-                    </div>
-                    <div class="menu-info">
-                        <h3 class="menu-name">Butter Croissant</h3>
-                        <p class="menu-description">Flaky, golden pastry made with French butter, baked fresh every morning</p>
-                    </div>
-                </div>
+          <div>
 
-                <!-- Item 4 -->
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1565958011703-44f5a201a25b?w=500&q=80" alt="New York Cheesecake">
-                        <div class="menu-overlay">
-                            <span class="menu-price">$6.50</span>
-                        </div>
-                    </div>
-                    <div class="menu-info">
-                        <h3 class="menu-name">New York Cheesecake</h3>
-                        <p class="menu-description">Creamy classic cheesecake with berry compote and graham crust</p>
-                    </div>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=500&q=80" alt="Avocado Sandwich">
-                        <div class="menu-overlay">
-                            <span class="menu-price">$9.50</span>
-                        </div>
-                    </div>
-                    <div class="menu-info">
-                        <h3 class="menu-name">Avocado Toast Deluxe</h3>
-                        <p class="menu-description">Sourdough bread, smashed avocado, poached egg, cherry tomatoes, and microgreens</p>
-                    </div>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="menu-item animate-on-scroll">
-                    <div class="menu-image">
-                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&q=80" alt="Iced Latte">
-                        <div class="menu-overlay">
-                            <span class="menu-price">$5.00</span>
-                        </div>
-                    </div>
-                    <div class="menu-info">
-                        <h3 class="menu-name">Honey Iced Latte</h3>
-                        <p class="menu-description">Espresso over ice with cold milk and a drizzle of local wildflower honey</p>
-                    </div>
-                </div>
+            <div class="menu-item-name">
+              Flat White
             </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="#" class="btn btn-secondary">View Full Menu</a>
+
+            <div class="menu-item-description">
+              Double espresso, silky milk
             </div>
+
+          </div>
+
+          <div class="menu-price">
+            $5
+          </div>
+
         </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2 class="section-title text-center">Our Space</h2>
-            <p class="section-subtitle text-center">A cozy corner for coffee lovers</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&q=80" alt="Café Interior">
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="Coffee Art">
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80" alt="Pastries">
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="Coffee Cup">
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=80" alt="Seating Area">
-                </div>
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=600&q=80" alt="Outdoor Seating">
-                </div>
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Honey Latte
             </div>
+
+            <div class="menu-item-description">
+              Espresso, steamed milk & honey
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $6
+          </div>
+
         </div>
-    </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title text-center">What Our Guests Say</h2>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">"The best coffee in the city! The atmosphere is so warm and inviting. I come here every morning before work."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah M.">
-                        <div>
-                            <h4>Sarah Mitchell</h4>
-                            <span>Regular Customer</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">"Their matcha latte is absolutely divine. The pastries are fresh and the staff remembers your name. A true gem!"</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James L.">
-                        <div>
-                            <h4>James Liu</h4>
-                            <span>Food Blogger</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="menu-item">
 
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">"Perfect spot for remote work. Great WiFi, comfortable seating, and the iced latte keeps me going all afternoon."</p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emma R.">
-                        <div>
-                            <h4>Emma Rodriguez</h4>
-                            <span>Freelance Designer</span>
-                        </div>
-                    </div>
-                </div>
+          <div>
+
+            <div class="menu-item-name">
+              Iced Matcha
             </div>
+
+            <div class="menu-item-description">
+              Ceremonial matcha & cold milk
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $6
+          </div>
+
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title text-center">Visit Us</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <div>
-                            <h4>Address</h4>
-                            <p>123 Brew Street, Coffee District<br>New York, NY 10001</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">🕐</span>
-                        <div>
-                            <h4>Opening Hours</h4>
-                            <p>Mon - Fri: 7:00 AM - 7:00 PM<br>Sat - Sun: 8:00 AM - 6:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>(555) 123-4567</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="contact-icon">✉️</span>
-                        <div>
-                            <h4>Email</h4>
-                            <p>hello@honeycafe.com</p>
-                        </div>
-                    </div>
+      </div>
 
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <h3>Send us a Message</h3>
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+      <!-- BRUNCH -->
+
+      <div class="menu-category reveal">
+
+        <h3 class="menu-category-title">
+          Brunch
+        </h3>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Honey Pancakes
             </div>
+
+            <div class="menu-item-description">
+              Seasonal fruit, whipped cream
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $12
+          </div>
+
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Honey Café</h3>
-                    <p>Crafting moments of joy, one cup at a time.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#menu">Menu</a>
-                    <a href="#contact">Contact</a>
-                </div>
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Avocado Toast
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Honey Café. All rights reserved.</p>
+
+            <div class="menu-item-description">
+              Sourdough, avocado, herbs & lemon
             </div>
+
+          </div>
+
+          <div class="menu-price">
+            $11
+          </div>
+
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              French Toast
+            </div>
+
+            <div class="menu-item-description">
+              Brioche, berries & maple
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $13
+          </div>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Eggs & Toast
+            </div>
+
+            <div class="menu-item-description">
+              Farm eggs, sourdough & greens
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $10
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- SWEETS -->
+
+      <div class="menu-category reveal">
+
+        <h3 class="menu-category-title">
+          Sweet Things
+        </h3>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Honey Cake
+            </div>
+
+            <div class="menu-item-description">
+              Layers of soft honey sponge
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $7
+          </div>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Basque Cheesecake
+            </div>
+
+            <div class="menu-item-description">
+              Creamy center, caramelized top
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $8
+          </div>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Chocolate Cookie
+            </div>
+
+            <div class="menu-item-description">
+              Dark chocolate & sea salt
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $4
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- DRINKS -->
+
+      <div class="menu-category reveal">
+
+        <h3 class="menu-category-title">
+          Something Else
+        </h3>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Fresh Lemonade
+            </div>
+
+            <div class="menu-item-description">
+              Lemon, mint & sparkling water
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $5
+          </div>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Chai Latte
+            </div>
+
+            <div class="menu-item-description">
+              Spiced tea & steamed milk
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $6
+          </div>
+
+        </div>
+
+
+        <div class="menu-item">
+
+          <div>
+
+            <div class="menu-item-name">
+              Seasonal Tonic
+            </div>
+
+            <div class="menu-item-description">
+              Ask what's pouring today
+            </div>
+
+          </div>
+
+          <div class="menu-price">
+            $5
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURE
+     ===================================================== -->
+
+<section class="feature">
+
+  <div class="feature-content reveal">
+
+    <div class="eyebrow" style="color:#e7c98d;">
+      Made slowly
+    </div>
+
+    <h2 class="feature-title">
+      Come for coffee.<br>
+      Stay for the feeling.
+    </h2>
+
+    <p class="feature-copy">
+      Every detail at Honey is designed to make
+      an ordinary day feel a little more special.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+     ===================================================== -->
+
+<section class="gallery" id="gallery">
+
+  <div class="section-inner">
+
+    <div class="gallery-header reveal">
+
+      <div>
+
+        <div class="eyebrow">
+          Around Honey
+        </div>
+
+        <h2 class="section-title">
+          A space to stay.
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item large reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1600&q=85"
+          alt="Coffee at Honey Café"
+        >
+
+      </div>
+
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85"
+          alt="Café interior"
+        >
+
+      </div>
+
+
+      <div class="gallery-item reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1000&q=85"
+          alt="Coffee and pastry"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     REVIEWS
+     ===================================================== -->
+
+<section class="reviews">
+
+  <div class="section-inner">
+
+    <div class="eyebrow">
+      Kind words
+    </div>
+
+    <h2 class="section-title">
+      What people say.
+    </h2>
+
+
+    <div class="reviews-grid">
+
+
+      <div class="review reveal">
+
+        <div class="review-stars">
+          ★★★★★
+        </div>
+
+        <p class="review-text">
+          “The kind of café where you come
+          for one coffee and somehow stay
+          for three hours.”
+        </p>
+
+        <div class="review-author">
+          — Anna
+        </div>
+
+      </div>
+
+
+      <div class="review reveal">
+
+        <div class="review-stars">
+          ★★★★★
+        </div>
+
+        <p class="review-text">
+          “Beautiful space, incredible coffee,
+          and the honey latte is officially
+          my new favorite.”
+        </p>
+
+        <div class="review-author">
+          — David
+        </div>
+
+      </div>
+
+
+      <div class="review reveal">
+
+        <div class="review-stars">
+          ★★★★★
+        </div>
+
+        <p class="review-text">
+          “Warm, calm and exactly the kind
+          of place Yerevan needed.”
+        </p>
+
+        <div class="review-author">
+          — Mari
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESERVATION
+     ===================================================== -->
+
+<section class="reservation" id="reservation">
+
+  <div class="section-inner">
+
+    <div class="reservation-grid">
+
+
+      <div class="reveal">
+
+        <div class="eyebrow">
+          Your table awaits
+        </div>
+
+        <h2 class="section-title">
+          Save<br>
+          your seat.
+        </h2>
+
+        <p class="reservation-description">
+          Planning brunch, a coffee date or a
+          slow afternoon with friends?
+          Send us a reservation request.
+        </p>
+
+
+        <div class="reservation-info">
+
+          <div class="info-row">
+
+            <span class="info-label">
+              Phone
+            </span>
+
+            <span>
+              +374 00 000 000
+            </span>
+
+          </div>
+
+
+          <div class="info-row">
+
+            <span class="info-label">
+              Email
+            </span>
+
+            <span>
+              hello@honeycafe.am
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <form
+        class="reservation-form reveal"
+        onsubmit="submitReservation(event)"
+      >
+
+        <div class="field">
+
+          <label>
+            Name
+          </label>
+
+          <input
+            type="text"
+            placeholder="Your name"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Email
+          </label>
+
+          <input
+            type="email"
+            placeholder="Your email"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Date
+          </label>
+
+          <input
+            type="date"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Time
+          </label>
+
+          <select required>
+
+            <option value="">
+              Select time
+            </option>
+
+            <option>
+              10:00 AM
+            </option>
+
+            <option>
+              12:00 PM
+            </option>
+
+            <option>
+              2:00 PM
+            </option>
+
+            <option>
+              4:00 PM
+            </option>
+
+            <option>
+              6:00 PM
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Guests
+          </label>
+
+          <select required>
+
+            <option value="">
+              Number of guests
+            </option>
+
+            <option>
+              1
+            </option>
+
+            <option>
+              2
+            </option>
+
+            <option>
+              3
+            </option>
+
+            <option>
+              4
+            </option>
+
+            <option>
+              5+
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Occasion
+          </label>
+
+          <input
+            type="text"
+            placeholder="Optional"
+          >
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>
+            Note
+          </label>
+
+          <textarea
+            placeholder="Anything we should know?"
+          ></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <button
+            type="submit"
+            class="submit-button"
+          >
+            Request a Reservation
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+     ===================================================== -->
+
+<section class="location" id="visit">
+
+  <div class="section-inner">
+
+    <div class="location-grid">
+
+
+      <div class="location-map reveal"></div>
+
+
+      <div class="location-content reveal">
+
+        <div class="eyebrow">
+          Come say hello
+        </div>
+
+        <h2 class="section-title">
+          Find us.
+        </h2>
+
+        <div class="address">
+          12 Abovyan Street<br>
+          Yerevan, Armenia
+        </div>
+
+
+        <div class="hours">
+
+          <div class="hours-row">
+
+            <span>
+              Monday — Friday
+            </span>
+
+            <span>
+              08:00 — 22:00
+            </span>
+
+          </div>
+
+
+          <div class="hours-row">
+
+            <span>
+              Saturday
+            </span>
+
+            <span>
+              09:00 — 23:00
+            </span>
+
+          </div>
+
+
+          <div class="hours-row">
+
+            <span>
+              Sunday
+            </span>
+
+            <span>
+              09:00 — 21:00
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-top">
+
+
+      <div>
+
+        <div class="footer-logo">
+          Honey
+        </div>
+
+        <p class="footer-tagline">
+          Coffee, brunch, good people
+          and a place to slow down.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="footer-heading">
+          Explore
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#menu">
+            Menu
+          </a>
+
+          <a href="#gallery">
+            Gallery
+          </a>
+
+          <a href="#reservation">
+            Reservations
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <div class="footer-heading">
+          Follow along
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#">
+            Instagram
+          </a>
+
+          <a href="#">
+            Facebook
+          </a>
+
+          <a href="mailto:hello@honeycafe.am">
+            Email us
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Honey Café
+      </span>
+
+      <span>
+        Made for slow mornings.
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script>
+
+  /* =====================================================
+     SCROLL REVEAL
+     ===================================================== */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const revealObserver =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  revealElements.forEach((element) => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+  /* =====================================================
+     RESERVATION FORM
+     ===================================================== */
+
+  function submitReservation(event) {
+
+    event.preventDefault();
+
+    const button =
+      event.target.querySelector(
+        ".submit-button"
+      );
+
+    button.textContent =
+      "Reservation Request Sent";
+
+    button.style.background =
+      "#c99545";
+
+    setTimeout(() => {
+
+      button.textContent =
+        "Request a Reservation";
+
+      button.style.background =
+        "";
+
+      event.target.reset();
+
+    }, 3500);
+
+  }
+
+
+  /* =====================================================
+     NAVIGATION — CLOSE MOBILE LINKS IF NEEDED
+     ===================================================== */
+
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach((link) => {
+
+      link.addEventListener(
+        "click",
+        function(event) {
+
+          const target =
+            document.querySelector(
+              this.getAttribute("href")
+            );
+
+          if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+              behavior: "smooth"
+            });
+
+          }
+
+        }
+      );
+
+    });
+
+</script>
+
 </body>
 </html>
