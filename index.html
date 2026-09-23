@@ -4,31 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Honey Café — Coffee, Brunch & Good Things</title>
+  <title>Honey Café — Yerevan</title>
 
   <meta
     name="description"
-    content="Honey Café — a warm neighborhood café serving specialty coffee, brunch and beautifully made things."
+    content="Honey Café — coffee, brunch, sweet things and good moments in Yerevan."
   >
 
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
     rel="stylesheet"
   >
 
   <style>
 
-    /* =====================================================
+    /* =========================================================
        RESET
-       ===================================================== */
+    ========================================================= */
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -36,16 +37,16 @@
     }
 
     body {
-      background: #f5f0e8;
-      color: #29241f;
-      font-family: "DM Sans", sans-serif;
+      background: #f7f1e7;
+      color: #30271f;
+      font-family: "DM Sans", Arial, sans-serif;
       font-weight: 400;
-      overflow-x: hidden;
+      line-height: 1.5;
     }
 
     img {
-      width: 100%;
       display: block;
+      width: 100%;
     }
 
     a {
@@ -55,1020 +56,465 @@
 
     button,
     input,
-    textarea {
-      font-family: inherit;
+    textarea,
+    select {
+      font: inherit;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        VARIABLES
-       ===================================================== */
+    ========================================================= */
 
     :root {
-      --cream: #f5f0e8;
-      --cream-light: #faf7f1;
-      --brown: #29241f;
-      --brown-soft: #665d53;
-      --honey: #c99545;
-      --honey-light: #e7c98d;
-      --line: rgba(41, 36, 31, 0.16);
+      --cream: #f7f1e7;
+      --cream-dark: #eee4d5;
+      --paper: #fbf8f2;
+      --brown: #30271f;
+      --brown-soft: #65594e;
+      --honey: #a97945;
+      --gold: #b78b59;
+      --line: rgba(48, 39, 31, 0.18);
       --white: #fffdf9;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        ANNOUNCEMENT BAR
-       ===================================================== */
+    ========================================================= */
 
     .announcement {
-      width: 100%;
-      background: var(--brown);
-      color: #f9f4eb;
-
-      height: 36px;
-
+      background: #30271f;
+      color: #f7f1e7;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
-
+      padding: 0 20px;
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        NAVIGATION
-       ===================================================== */
+    ========================================================= */
 
-    .nav {
+    .navbar {
       position: absolute;
-      top: 36px;
+      top: 38px;
       left: 0;
       width: 100%;
-
-      z-index: 100;
-
+      z-index: 20;
       padding: 25px 5vw;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       color: white;
     }
 
     .logo {
-      font-family: "Playfair Display", serif;
-      font-size: 27px;
-      letter-spacing: -0.04em;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 29px;
+      letter-spacing: 0.02em;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 34px;
-
-      font-size: 10px;
-      letter-spacing: 0.17em;
+      gap: 35px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
     .nav-links a {
       position: relative;
+      transition: opacity 0.3s ease;
     }
 
-    .nav-links a::after {
-      content: "";
-
-      position: absolute;
-
-      left: 0;
-      bottom: -6px;
-
-      width: 0;
-      height: 1px;
-
-      background: white;
-
-      transition: width .3s ease;
+    .nav-links a:hover {
+      opacity: 0.65;
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-button {
+    .nav-reserve {
       border: 1px solid rgba(255,255,255,.7);
-
-      padding: 12px 20px;
-
-      font-size: 9px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-
-      transition: all .3s ease;
-    }
-
-    .nav-button:hover {
-      background: white;
-      color: var(--brown);
+      padding: 11px 18px;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        HERO
-       ===================================================== */
+    ========================================================= */
 
     .hero {
+      min-height: 100vh;
       position: relative;
-
-      min-height: calc(100vh - 36px);
-      min-height: calc(100svh - 36px);
-
       display: flex;
-      align-items: center;
-
+      align-items: flex-end;
       overflow: hidden;
-
       background:
         linear-gradient(
-          90deg,
-          rgba(22,17,12,.68) 0%,
-          rgba(22,17,12,.28) 50%,
-          rgba(22,17,12,.08) 100%
+          to top,
+          rgba(25,19,14,.78),
+          rgba(25,19,14,.08) 65%
         ),
-        url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=2200&q=90")
-        center / cover no-repeat;
-    }
-
-    .hero-content {
-      position: relative;
-
-      z-index: 2;
-
-      width: 100%;
-      max-width: 1400px;
-
-      margin: 0 auto;
-
-      padding: 120px 7vw 70px;
-
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
       color: white;
     }
 
-    .hero-kicker {
-      font-size: 10px;
-      letter-spacing: .28em;
+    .hero-content {
+      width: 100%;
+      padding: 130px 7vw 80px;
+      max-width: 1050px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-
-      margin-bottom: 24px;
-
+      margin-bottom: 25px;
       opacity: .85;
     }
 
     .hero h1 {
-      max-width: 720px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(65px, 9vw, 135px);
-
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(65px, 11vw, 155px);
+      line-height: .82;
       font-weight: 400;
-
-      line-height: .88;
-
-      letter-spacing: -.055em;
+      letter-spacing: -0.055em;
+      max-width: 950px;
     }
 
     .hero h1 em {
-      font-style: italic;
+      font-weight: 400;
     }
 
     .hero-description {
       max-width: 450px;
-
-      margin-top: 30px;
-
+      margin-top: 35px;
       font-size: 15px;
-
-      line-height: 1.7;
-
-      color: rgba(255,255,255,.88);
+      line-height: 1.8;
+      color: rgba(255,255,255,.85);
     }
 
-    .hero-actions {
+    .hero-buttons {
       display: flex;
-
-      align-items: center;
-
-      gap: 14px;
-
+      gap: 12px;
       margin-top: 35px;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
-      min-width: 160px;
-
-      padding: 16px 25px;
-
+      min-height: 50px;
+      padding: 0 25px;
       border: 1px solid white;
-
-      font-size: 9px;
-
+      font-size: 10px;
       letter-spacing: .18em;
-
       text-transform: uppercase;
-
       transition: all .35s ease;
     }
 
-    .button-primary {
+    .button:hover {
       background: white;
-      color: var(--brown);
+      color: #30271f;
     }
 
-    .button-primary:hover {
-      background: transparent;
+    .button-dark {
+      background: #30271f;
+      border-color: #30271f;
       color: white;
     }
 
-    .button-outline:hover {
-      background: white;
-      color: var(--brown);
-    }
-
-    .hero-bottom {
-      position: absolute;
-
-      bottom: 28px;
-      left: 7vw;
-
-      z-index: 3;
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 15px;
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
-
-      color: rgba(255,255,255,.7);
-    }
-
-    .hero-bottom-line {
-      width: 55px;
-      height: 1px;
-
-      background: rgba(255,255,255,.6);
+    .button-dark:hover {
+      background: transparent;
+      color: #30271f;
     }
 
 
-    /* =====================================================
-       GENERAL SECTION
-       ===================================================== */
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
 
     section {
       width: 100%;
     }
 
-    .section-inner {
-      width: 100%;
-      max-width: 1500px;
-
-      margin: auto;
-
-      padding: 120px 6vw;
+    .section {
+      padding: 140px 7vw;
     }
 
-    .eyebrow {
-      font-size: 9px;
-      letter-spacing: .28em;
+    .section-label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 10px;
+      letter-spacing: .2em;
       text-transform: uppercase;
-
-      color: var(--brown-soft);
-
-      margin-bottom: 18px;
+      color: var(--honey);
     }
 
     .section-title {
-      font-family: "Playfair Display", serif;
-
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(48px, 7vw, 92px);
       font-weight: 400;
-
-      font-size: clamp(45px, 6vw, 85px);
-
       line-height: .95;
-
       letter-spacing: -.045em;
     }
 
-
-    /* =====================================================
-       INTRO
-       ===================================================== */
-
-    .intro {
-      background: var(--cream-light);
+    .section-title em {
+      font-weight: 400;
     }
 
-    .intro-grid {
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
-      gap: 100px;
-
+      gap: 8vw;
       align-items: center;
     }
 
-    .intro-text {
+    .about-text {
       max-width: 560px;
     }
 
-    .intro-copy {
-      margin-top: 28px;
-
+    .about-text p {
+      margin-top: 35px;
       font-size: 16px;
-
       line-height: 1.9;
-
       color: var(--brown-soft);
     }
 
-    .intro-signature {
-      margin-top: 35px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: 26px;
-
-      font-style: italic;
-    }
-
-    .intro-image {
-      height: 650px;
-
+    .about-image {
+      height: 700px;
       overflow: hidden;
     }
 
-    .intro-image img {
+    .about-image img {
       height: 100%;
-
       object-fit: cover;
-
       transition: transform 1s ease;
     }
 
-    .intro-image:hover img {
+    .about-image:hover img {
       transform: scale(1.04);
     }
 
 
-   <!-- =========================
-     MENU
-========================= -->
-<section class="menu-section" id="menu">
-  <div class="section-heading">
-    <span class="eyebrow">THE MENU</span>
-    <h2>Something for<br><em>every mood.</em></h2>
-    <p>Simple ingredients, thoughtful combinations, and things worth staying for.</p>
-  </div>
-
-  <div class="menu-accordion">
-
-    <!-- COFFEE -->
-    <div class="menu-category">
-      <button class="menu-category-btn" type="button">
-        <span>
-          <small>01</small>
-          Coffee
-        </span>
-        <span class="menu-plus">+</span>
-      </button>
-
-      <div class="menu-items">
-        <div class="menu-item">
-          <div>
-            <h3>Espresso</h3>
-            <p>Rich and intense, served straight.</p>
-          </div>
-          <strong>֏1,500</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Americano</h3>
-            <p>Espresso with hot water.</p>
-          </div>
-          <strong>֏1,800</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Cappuccino</h3>
-            <p>Espresso, steamed milk and soft foam.</p>
-          </div>
-          <strong>֏2,200</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Flat White</h3>
-            <p>Velvety milk with a double espresso.</p>
-          </div>
-          <strong>֏2,400</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Latte</h3>
-            <p>Smooth espresso with steamed milk.</p>
-          </div>
-          <strong>֏2,300</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Mocha</h3>
-            <p>Espresso, chocolate and steamed milk.</p>
-          </div>
-          <strong>֏2,600</strong>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- COLD DRINKS -->
-    <div class="menu-category">
-      <button class="menu-category-btn" type="button">
-        <span>
-          <small>02</small>
-          Cold Drinks
-        </span>
-        <span class="menu-plus">+</span>
-      </button>
-
-      <div class="menu-items">
-        <div class="menu-item">
-          <div>
-            <h3>Iced Americano</h3>
-            <p>Cold, refreshing and espresso-forward.</p>
-          </div>
-          <strong>֏2,000</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Iced Latte</h3>
-            <p>Chilled espresso with creamy milk.</p>
-          </div>
-          <strong>֏2,500</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Cold Brew</h3>
-            <p>Slow brewed for a smooth finish.</p>
-          </div>
-          <strong>֏2,400</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Fresh Lemonade</h3>
-            <p>Fresh lemon, water and a touch of sweetness.</p>
-          </div>
-          <strong>֏2,000</strong>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- BRUNCH -->
-    <div class="menu-category">
-      <button class="menu-category-btn" type="button">
-        <span>
-          <small>03</small>
-          Brunch
-        </span>
-        <span class="menu-plus">+</span>
-      </button>
-
-      <div class="menu-items">
-        <div class="menu-item">
-          <div>
-            <h3>Avocado Toast</h3>
-            <p>Sourdough, avocado, herbs and poached egg.</p>
-          </div>
-          <strong>֏4,800</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Eggs Benedict</h3>
-            <p>Poached eggs, brioche and creamy hollandaise.</p>
-          </div>
-          <strong>֏5,500</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Honey Pancakes</h3>
-            <p>Fluffy pancakes with honey and seasonal fruit.</p>
-          </div>
-          <strong>֏4,500</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Granola Bowl</h3>
-            <p>Yogurt, house granola, berries and honey.</p>
-          </div>
-          <strong>֏4,200</strong>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- SWEET THINGS -->
-    <div class="menu-category">
-      <button class="menu-category-btn" type="button">
-        <span>
-          <small>04</small>
-          Sweet Things
-        </span>
-        <span class="menu-plus">+</span>
-      </button>
-
-      <div class="menu-items">
-        <div class="menu-item">
-          <div>
-            <h3>Honey Cake</h3>
-            <p>Soft layers with delicate honey cream.</p>
-          </div>
-          <strong>֏2,800</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Chocolate Tart</h3>
-            <p>Dark chocolate ganache on a buttery crust.</p>
-          </div>
-          <strong>֏3,000</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Cheesecake</h3>
-            <p>Creamy cheesecake with seasonal topping.</p>
-          </div>
-          <strong>֏3,200</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Cookie of the Day</h3>
-            <p>Freshly baked, soft in the center.</p>
-          </div>
-          <strong>֏1,500</strong>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- TEA -->
-    <div class="menu-category">
-      <button class="menu-category-btn" type="button">
-        <span>
-          <small>05</small>
-          Tea
-        </span>
-        <span class="menu-plus">+</span>
-      </button>
-
-      <div class="menu-items">
-        <div class="menu-item">
-          <div>
-            <h3>English Breakfast</h3>
-            <p>Classic black tea with a rich body.</p>
-          </div>
-          <strong>֏1,800</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Earl Grey</h3>
-            <p>Black tea with delicate bergamot.</p>
-          </div>
-          <strong>֏1,900</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Green Tea</h3>
-            <p>Light, fresh and aromatic.</p>
-          </div>
-          <strong>֏1,800</strong>
-        </div>
-
-        <div class="menu-item">
-          <div>
-            <h3>Fresh Mint Tea</h3>
-            <p>Fresh mint leaves with hot water.</p>
-          </div>
-          <strong>֏1,700</strong>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- =========================
-     MENU CSS
-========================= -->
-<style>
-
-.menu-section {
-  padding: 140px 7vw;
-  background: #f7f1e7;
-}
-
-.section-heading {
-  max-width: 700px;
-  margin-bottom: 70px;
-}
-
-.section-heading .eyebrow {
-  display: block;
-  margin-bottom: 22px;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #9a7550;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(48px, 7vw, 96px);
-  line-height: .95;
-  font-weight: 400;
-  letter-spacing: -0.04em;
-}
-
-.section-heading h2 em {
-  font-weight: 400;
-}
-
-.section-heading p {
-  max-width: 500px;
-  margin-top: 30px;
-  color: #71675c;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-
-/* ACCORDION */
-
-.menu-accordion {
-  max-width: 1100px;
-  border-top: 1px solid rgba(55, 42, 30, .25);
-}
-
-.menu-category {
-  border-bottom: 1px solid rgba(55, 42, 30, .25);
-}
-
-
-/* CATEGORY BUTTON */
-
-.menu-category-btn {
-  width: 100%;
-  border: 0;
-  background: transparent;
-  padding: 30px 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  text-align: left;
-  color: #33271d;
-}
-
-.menu-category-btn span:first-child {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 400;
-}
-
-.menu-category-btn small {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  letter-spacing: .15em;
-  color: #a88768;
-}
-
-
-/* PLUS */
-
-.menu-plus {
-  width: 42px;
-  height: 42px;
-  border: 1px solid #8c735d;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  font-weight: 200;
-  transition: transform .4s ease, background .3s ease, color .3s ease;
-}
-
-.menu-category-btn:hover .menu-plus {
-  background: #33271d;
-  color: #fff;
-}
-
-.menu-category.active .menu-plus {
-  transform: rotate(45deg);
-}
-
-
-/* HIDDEN MENU */
-
-.menu-items {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition:
-    max-height .6s ease,
-    opacity .4s ease,
-    padding .5s ease;
-}
-
-
-/* OPEN MENU */
-
-.menu-category.active .menu-items {
-  max-height: 1000px;
-  opacity: 1;
-  padding-bottom: 25px;
-}
-
-
-/* MENU ITEM */
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  padding: 25px 5px;
-  border-top: 1px solid rgba(55, 42, 30, .12);
-}
-
-.menu-item h3 {
-  margin: 0 0 7px;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 22px;
-  font-weight: 400;
-}
-
-.menu-item p {
-  margin: 0;
-  color: #81766a;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.menu-item strong {
-  white-space: nowrap;
-  font-size: 15px;
-  font-weight: 500;
-  color: #8b623b;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-  .menu-section {
-    padding: 90px 6vw;
-  }
-
-  .section-heading {
-    margin-bottom: 45px;
-  }
-
-  .menu-category-btn {
-    padding: 24px 0;
-  }
-
-  .menu-category-btn span:first-child {
-    gap: 15px;
-    font-size: 30px;
-  }
-
-  .menu-plus {
-    width: 36px;
-    height: 36px;
-    font-size: 22px;
-  }
-
-  .menu-item {
-    align-items: flex-start;
-    padding: 20px 0;
-    gap: 20px;
-  }
-
-  .menu-item h3 {
-    font-size: 19px;
-  }
-
-  .menu-item p {
-    font-size: 12px;
-  }
-
-  .menu-item strong {
-    font-size: 14px;
-  }
-}
-
-</style>
-  
- 
-<!-- =========================
-     MENU JAVASCRIPT
-========================= -->
-<script>
-
-document.querySelectorAll(".menu-category-btn").forEach(button => {
-
-  button.addEventListener("click", () => {
-
-    const category = button.parentElement;
-
-    /* Close other categories */
-    document.querySelectorAll(".menu-category").forEach(item => {
-      if (item !== category) {
-        item.classList.remove("active");
-      }
-    });
-
-    /* Open / close clicked category */
-    category.classList.toggle("active");
-
-  });
-
-});
-
-</script>
-      
-
-     
-   
-
-    /* =====================================================
-       FEATURED IMAGE
-       ===================================================== */
-
-    .feature {
-      position: relative;
-
-      height: 80vh;
-      min-height: 600px;
-
-      overflow: hidden;
-
-      background:
-        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90")
-        center / cover no-repeat;
+    /* =========================================================
+       MENU
+    ========================================================= */
+
+    .menu-section {
+      background: #f1e8da;
+      padding: 140px 7vw;
     }
 
-    .feature::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(24,18,12,.62),
-          rgba(24,18,12,.08)
-        );
+    .menu-intro {
+      max-width: 700px;
+      margin-bottom: 70px;
     }
 
-    .feature-content {
-      position: relative;
+    .menu-intro p {
+      max-width: 500px;
+      margin-top: 30px;
+      color: var(--brown-soft);
+      font-size: 15px;
+      line-height: 1.8;
+    }
 
-      z-index: 2;
+    .menu-accordion {
+      max-width: 1100px;
+      border-top: 1px solid var(--line);
+    }
 
-      height: 100%;
+    .menu-category {
+      border-bottom: 1px solid var(--line);
+    }
 
-      max-width: 1500px;
-
-      margin: auto;
-
-      padding: 100px 7vw;
-
+    .menu-category-btn {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 31px 5px;
       display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      color: var(--brown);
+    }
 
-      flex-direction: column;
+    .menu-category-btn > span:first-child {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(30px, 4vw, 49px);
+      font-weight: 400;
+    }
 
+    .menu-category-btn small {
+      font-family: "DM Sans", Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: .16em;
+      color: var(--honey);
+    }
+
+    .menu-plus {
+      width: 44px;
+      height: 44px;
+      border: 1px solid #8f765d;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
       justify-content: center;
+      font-family: Arial, sans-serif;
+      font-size: 26px;
+      font-weight: 200;
+      line-height: 1;
+      transition:
+        transform .45s ease,
+        background .3s ease,
+        color .3s ease;
+    }
 
+    .menu-category-btn:hover .menu-plus {
+      background: var(--brown);
       color: white;
     }
 
-    .feature-title {
-      max-width: 700px;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(55px, 7vw, 100px);
-
-      line-height: .9;
-
-      font-weight: 400;
-
-      letter-spacing: -.05em;
+    .menu-category.active .menu-plus {
+      transform: rotate(45deg);
     }
 
-    .feature-copy {
-      max-width: 430px;
-
-      margin-top: 25px;
-
-      font-size: 14px;
-
-      line-height: 1.8;
-
-      color: rgba(255,255,255,.82);
+    .menu-items {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height .65s ease,
+        opacity .35s ease,
+        padding .5s ease;
     }
 
-
-    /* =====================================================
-       GALLERY
-       ===================================================== */
-
-    .gallery {
-      background: var(--cream-light);
+    .menu-category.active .menu-items {
+      max-height: 1200px;
+      opacity: 1;
+      padding-bottom: 25px;
     }
 
-    .gallery-header {
+    .menu-item {
       display: flex;
-
+      align-items: center;
       justify-content: space-between;
+      gap: 40px;
+      padding: 25px 5px;
+      border-top: 1px solid rgba(48,39,31,.11);
+    }
 
-      align-items: end;
+    .menu-item h3 {
+      margin-bottom: 6px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+    }
 
-      margin-bottom: 50px;
+    .menu-item p {
+      color: #817569;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .menu-item strong {
+      white-space: nowrap;
+      color: #8b623b;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+
+    /* =========================================================
+       FEATURE IMAGE
+    ========================================================= */
+
+    .feature-image {
+      height: 75vh;
+      min-height: 550px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          to top,
+          rgba(25,19,14,.6),
+          transparent 70%
+        ),
+        url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2200&q=90")
+        center / cover;
+    }
+
+    .feature-content {
+      position: absolute;
+      bottom: 65px;
+      left: 7vw;
+      color: white;
+      max-width: 600px;
+    }
+
+    .feature-content .section-title {
+      font-size: clamp(45px, 7vw, 90px);
+    }
+
+    .feature-content p {
+      max-width: 450px;
+      margin-top: 25px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255,255,255,.85);
+    }
+
+
+    /* =========================================================
+       GALLERY
+    ========================================================= */
+
+    .gallery-section {
+      padding: 140px 5vw;
+      background: var(--paper);
+    }
+
+    .gallery-heading {
+      text-align: center;
+      margin-bottom: 65px;
     }
 
     .gallery-grid {
       display: grid;
-
-      grid-template-columns: 1.15fr .85fr;
-
-      grid-template-rows: 320px 320px;
-
-      gap: 15px;
+      grid-template-columns: 1.1fr .9fr 1fr;
+      grid-template-rows: 330px 330px;
+      gap: 12px;
     }
 
     .gallery-item {
       overflow: hidden;
     }
 
-    .gallery-item.large {
-      grid-row: span 2;
-    }
-
     .gallery-item img {
       width: 100%;
       height: 100%;
-
       object-fit: cover;
-
       transition: transform .8s ease;
     }
 
@@ -1076,586 +522,398 @@ document.querySelectorAll(".menu-category-btn").forEach(button => {
       transform: scale(1.05);
     }
 
-
-    /* =====================================================
-       TESTIMONIALS
-       ===================================================== */
-
-    .reviews {
-      background: var(--brown);
-
-      color: white;
+    .gallery-item:nth-child(1) {
+      grid-row: span 2;
     }
 
-    .reviews .eyebrow {
-      color: #cfc5b7;
+    .gallery-item:nth-child(4) {
+      grid-column: span 2;
+    }
+
+
+    /* =========================================================
+       TESTIMONIALS
+    ========================================================= */
+
+    .reviews {
+      background: #e9ddcc;
+    }
+
+    .reviews-heading {
+      max-width: 600px;
+      margin-bottom: 70px;
     }
 
     .reviews-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
-      gap: 40px;
-
-      margin-top: 65px;
+      gap: 25px;
     }
 
     .review {
-      border-top: 1px solid rgba(255,255,255,.25);
-
-      padding-top: 28px;
+      padding: 40px;
+      background: rgba(255,255,255,.42);
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .review-stars {
-      color: var(--honey-light);
-
-      font-size: 13px;
-
-      letter-spacing: .15em;
-
-      margin-bottom: 25px;
+    .review-mark {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 55px;
+      line-height: .5;
+      color: var(--honey);
     }
 
-    .review-text {
-      font-family: "Playfair Display", serif;
-
-      font-size: 22px;
-
+    .review p {
+      margin-top: 20px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 21px;
       line-height: 1.45;
-
-      font-style: italic;
-
-      color: #f6f0e8;
     }
 
-    .review-author {
-      margin-top: 30px;
-
-      font-size: 9px;
-
-      letter-spacing: .2em;
-
+    .review-name {
+      margin-top: 35px;
+      font-size: 10px;
+      letter-spacing: .16em;
       text-transform: uppercase;
-
-      color: #aaa096;
+      color: #766555;
     }
 
 
-    /* =====================================================
+    /* =========================================================
        RESERVATION
-       ===================================================== */
+    ========================================================= */
 
     .reservation {
-      background: var(--cream-light);
+      background: var(--cream);
     }
 
     .reservation-grid {
       display: grid;
-
-      grid-template-columns: .8fr 1.2fr;
-
-      gap: 100px;
-
+      grid-template-columns: .9fr 1.1fr;
+      gap: 9vw;
       align-items: start;
     }
 
-    .reservation-description {
-      max-width: 400px;
+    .reservation-text {
+      max-width: 520px;
+    }
 
-      margin-top: 25px;
-
+    .reservation-text p {
+      margin-top: 30px;
       color: var(--brown-soft);
-
-      line-height: 1.8;
-
-      font-size: 14px;
-    }
-
-    .reservation-info {
-      margin-top: 40px;
-
-      display: grid;
-
-      gap: 18px;
-    }
-
-    .info-row {
-      display: flex;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding-bottom: 15px;
-
-      border-bottom: 1px solid var(--line);
-
-      font-size: 12px;
-    }
-
-    .info-label {
-      color: var(--brown-soft);
-
-      text-transform: uppercase;
-
-      letter-spacing: .12em;
-
-      font-size: 9px;
+      line-height: 1.9;
+      font-size: 15px;
     }
 
     .reservation-form {
       display: grid;
+      gap: 18px;
+    }
 
+    .form-row {
+      display: grid;
       grid-template-columns: 1fr 1fr;
-
-      gap: 20px;
+      gap: 18px;
     }
 
     .field {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 8px;
-    }
-
-    .field.full {
-      grid-column: span 2;
-    }
-
-    .field label {
-      font-size: 9px;
-
-      text-transform: uppercase;
-
-      letter-spacing: .18em;
-
-      color: var(--brown-soft);
-    }
-
-    .field input,
-    .field textarea,
-    .field select {
-
-      width: 100%;
-
-      border: none;
-
+      border: 0;
       border-bottom: 1px solid var(--line);
-
       background: transparent;
-
-      padding: 13px 0;
-
+      padding: 15px 0;
+      width: 100%;
       outline: none;
-
       color: var(--brown);
-
-      font-size: 13px;
+      font-size: 14px;
     }
 
-    .field textarea {
-      min-height: 100px;
+    .field::placeholder {
+      color: #95897d;
+    }
 
+    textarea.field {
+      min-height: 100px;
       resize: vertical;
     }
 
-    .submit-button {
+    .reservation-form .button-dark {
       margin-top: 15px;
-
-      border: none;
-
-      background: var(--brown);
-
-      color: white;
-
-      padding: 17px 30px;
-
+      width: fit-content;
       cursor: pointer;
-
-      font-size: 9px;
-
-      letter-spacing: .18em;
-
-      text-transform: uppercase;
-
-      transition: all .3s ease;
-    }
-
-    .submit-button:hover {
-      background: var(--honey);
     }
 
 
-    /* =====================================================
-       LOCATION
-       ===================================================== */
+    /* =========================================================
+       VISIT
+    ========================================================= */
 
-    .location {
-      background: #e8dfd1;
+    .visit {
+      background: var(--brown);
+      color: var(--cream);
     }
 
-    .location-grid {
+    .visit-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
-      gap: 70px;
-
-      align-items: stretch;
+      gap: 8vw;
+      align-items: center;
     }
 
-    .location-map {
-      min-height: 480px;
+    .visit-details {
+      margin-top: 50px;
+      display: grid;
+      gap: 35px;
+    }
 
+    .detail-label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #bfa88f;
+    }
+
+    .detail-value {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .visit-map {
+      min-height: 570px;
       background:
         linear-gradient(
-          rgba(30,25,20,.1),
-          rgba(30,25,20,.1)
+          rgba(48,39,31,.15),
+          rgba(48,39,31,.15)
         ),
-        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1600&q=85")
+        url("https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=85")
         center / cover;
     }
 
-    .location-content {
-      display: flex;
 
-      flex-direction: column;
-
-      justify-content: center;
-    }
-
-    .address {
-      font-family: "Playfair Display", serif;
-
-      font-size: 30px;
-
-      line-height: 1.35;
-
-      margin-top: 25px;
-    }
-
-    .hours {
-      margin-top: 40px;
-
-      display: grid;
-
-      gap: 13px;
-
-      max-width: 360px;
-    }
-
-    .hours-row {
-      display: flex;
-
-      justify-content: space-between;
-
-      border-bottom: 1px solid rgba(41,36,31,.15);
-
-      padding-bottom: 10px;
-
-      font-size: 12px;
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        FOOTER
-       ===================================================== */
+    ========================================================= */
 
     footer {
-      background: #211d19;
-
-      color: #f4eee5;
-    }
-
-    .footer-inner {
-      max-width: 1500px;
-
-      margin: auto;
-
-      padding: 80px 6vw 35px;
+      background: #211b16;
+      color: #eee3d5;
+      padding: 70px 7vw 35px;
     }
 
     .footer-top {
-      display: grid;
-
-      grid-template-columns: 1.5fr 1fr 1fr;
-
-      gap: 70px;
-
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 50px;
       padding-bottom: 70px;
-
-      border-bottom: 1px solid rgba(255,255,255,.15);
     }
 
     .footer-logo {
-      font-family: "Playfair Display", serif;
-
-      font-size: 60px;
-
-      line-height: 1;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 40px;
     }
 
     .footer-tagline {
       max-width: 300px;
-
-      margin-top: 20px;
-
-      font-size: 12px;
-
+      margin-top: 15px;
+      color: #a89a8b;
+      font-size: 13px;
       line-height: 1.7;
-
-      color: #aaa096;
-    }
-
-    .footer-heading {
-      font-size: 9px;
-
-      text-transform: uppercase;
-
-      letter-spacing: .2em;
-
-      color: #a69b90;
-
-      margin-bottom: 20px;
     }
 
     .footer-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-column {
       display: grid;
+      gap: 13px;
+    }
 
-      gap: 11px;
+    .footer-column span {
+      font-size: 9px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #9b8875;
+      margin-bottom: 8px;
+    }
 
+    .footer-column a {
       font-size: 12px;
+      transition: opacity .3s ease;
     }
 
-    .footer-links a {
-      transition: color .25s ease;
-    }
-
-    .footer-links a:hover {
-      color: var(--honey-light);
+    .footer-column a:hover {
+      opacity: .6;
     }
 
     .footer-bottom {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
       padding-top: 25px;
-
-      font-size: 9px;
-
-      color: #83786e;
-
-      letter-spacing: .08em;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #897b6d;
+      font-size: 10px;
     }
 
 
-    /* =====================================================
-       ANIMATIONS
-       ===================================================== */
-
-    .reveal {
-      opacity: 0;
-
-      transform: translateY(25px);
-
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-
-      transform: translateY(0);
-    }
-
-
-    /* =====================================================
+    /* =========================================================
        MOBILE
-       ===================================================== */
+    ========================================================= */
 
     @media (max-width: 800px) {
-
-      .announcement {
-        height: 32px;
-
-        font-size: 8px;
-
-        letter-spacing: .12em;
-      }
-
-      .nav {
-        top: 32px;
-
-        padding:
-          20px 6vw;
-      }
 
       .nav-links {
         display: none;
       }
 
-      .logo {
-        font-size: 24px;
-      }
-
-      .nav-button {
-        padding: 10px 14px;
-      }
-
-      .hero {
-        min-height: calc(100svh - 32px);
+      .navbar {
+        padding: 20px 6vw;
       }
 
       .hero-content {
-        padding:
-          130px 7vw 70px;
+        padding: 120px 6vw 55px;
       }
 
       .hero h1 {
-        font-size:
-          clamp(
-            60px,
-            17vw,
-            95px
-          );
+        font-size: clamp(60px, 17vw, 100px);
       }
 
-      .hero-description {
+      .section,
+      .menu-section,
+      .gallery-section {
+        padding: 90px 6vw;
+      }
+
+      .about-grid,
+      .reservation-grid,
+      .visit-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .about-image {
+        height: 550px;
+      }
+
+      .menu-category-btn {
+        padding: 25px 0;
+      }
+
+      .menu-category-btn > span:first-child {
+        gap: 14px;
+        font-size: 31px;
+      }
+
+      .menu-plus {
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+      }
+
+      .menu-item {
+        align-items: flex-start;
+        padding: 21px 0;
+        gap: 20px;
+      }
+
+      .menu-item h3 {
+        font-size: 19px;
+      }
+
+      .menu-item p {
+        font-size: 12px;
+      }
+
+      .menu-item strong {
         font-size: 13px;
       }
 
-      .hero-actions {
-        flex-direction: column;
-
-        align-items: flex-start;
-      }
-
-      .section-inner {
-        padding:
-          80px 7vw;
-      }
-
-      .intro-grid,
-      .reservation-grid,
-      .location-grid {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-      }
-
-      .intro-image {
-        height: 480px;
-      }
-
-      .menu-header,
-      .gallery-header {
-        display: block;
-      }
-
-      .menu-note {
-        margin-top: 20px;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-
-        gap: 0;
-      }
-
-      .feature {
-        height: 650px;
-
-        min-height: 0;
+      .feature-image {
+        min-height: 580px;
+        height: 75vh;
       }
 
       .gallery-grid {
-        grid-template-columns: 1fr;
-
-        grid-template-rows:
-          400px
-          250px
-          250px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 250px 250px;
       }
 
-      .gallery-item.large {
-        grid-row: auto;
+      .gallery-item:nth-child(1) {
+        grid-row: span 2;
+      }
+
+      .gallery-item:nth-child(4) {
+        grid-column: span 1;
       }
 
       .reviews-grid {
         grid-template-columns: 1fr;
-
-        gap: 45px;
       }
 
-      .reservation-form {
+      .review {
+        min-height: 270px;
+      }
+
+      .form-row {
         grid-template-columns: 1fr;
       }
 
-      .field.full {
-        grid-column: auto;
-      }
-
-      .location-map {
-        min-height: 350px;
-
-        order: 2;
-      }
-
-      .location-content {
-        order: 1;
+      .visit-map {
+        min-height: 450px;
       }
 
       .footer-top {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
+        flex-direction: column;
       }
 
-      .footer-logo {
-        font-size: 50px;
+      .footer-links {
+        gap: 45px;
       }
 
       .footer-bottom {
         flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 10px;
       }
-
     }
 
 
-    /* =====================================================
-       VERY SMALL SCREENS
-       ===================================================== */
+    @media (max-width: 480px) {
 
-    @media (max-width: 420px) {
-
-      .hero h1 {
-        font-size: 58px;
+      .announcement {
+        font-size: 8px;
       }
 
-      .hero-description {
-        max-width: 330px;
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      .section-title {
-        font-size: 47px;
+      .button {
+        width: 100%;
       }
 
-      .intro-image {
-        height: 390px;
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 300px);
       }
 
-      .feature-title {
-        font-size: 55px;
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4) {
+        grid-row: auto;
+        grid-column: auto;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 30px;
       }
 
     }
@@ -1667,380 +925,240 @@ document.querySelectorAll(".menu-category-btn").forEach(button => {
 <body>
 
 
-<!-- =====================================================
-     ANNOUNCEMENT
-     ===================================================== -->
+  <!-- =======================================================
+       ANNOUNCEMENT
+  ======================================================== -->
 
-<div class="announcement">
-  Fresh coffee · Slow mornings · Open daily
-</div>
+  <div class="announcement">
+    Fresh coffee · Slow mornings · Good company
+  </div>
 
 
-<!-- =====================================================
-     NAVIGATION
-     ===================================================== -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-<header class="nav">
+  <nav class="navbar">
 
-  <a href="#" class="logo">
-    Honey
-  </a>
-
-  <nav class="nav-links">
-
-    <a href="#about">
-      About
+    <a href="#" class="logo">
+      Honey Café
     </a>
 
-    <a href="#menu">
-      Menu
-    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
 
-    <a href="#gallery">
-      Gallery
-    </a>
-
-    <a href="#visit">
-      Visit
-    </a>
+      <a href="#reserve" class="nav-reserve">
+        Reserve a Table
+      </a>
+    </div>
 
   </nav>
 
-  <a href="#reservation" class="nav-button">
-    Reserve a Table
-  </a>
 
-</header>
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
+  <section class="hero">
 
-<!-- =====================================================
-     HERO
-     ===================================================== -->
+    <div class="hero-content">
 
-<main>
+      <div class="hero-eyebrow">
+        Coffee · Brunch · Yerevan
+      </div>
 
-<section class="hero">
+      <h1>
+        Good things<br>
+        take <em>time.</em>
+      </h1>
 
-  <div class="hero-content">
+      <p class="hero-description">
+        A warm little café for slow mornings, excellent coffee,
+        homemade sweets and conversations that last longer than expected.
+      </p>
 
-    <div class="hero-kicker">
-      Coffee · Brunch · Bakery
-    </div>
+      <div class="hero-buttons">
 
-    <h1>
-      Good things<br>
-      <em>take time.</em>
-    </h1>
+        <a href="#menu" class="button">
+          Explore Menu
+        </a>
 
-    <p class="hero-description">
-      Welcome to Honey — a warm little café for beautifully
-      made coffee, slow mornings, long lunches and sweet moments.
-    </p>
-
-    <div class="hero-actions">
-
-      <a
-        href="#menu"
-        class="button button-primary"
-      >
-        Explore Menu
-      </a>
-
-      <a
-        href="#reservation"
-        class="button button-outline"
-      >
-        Find a Table
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="hero-bottom">
-
-    <span class="hero-bottom-line"></span>
-
-    Yerevan · Armenia
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-     ===================================================== -->
-
-<section class="intro" id="about">
-
-  <div class="section-inner">
-
-    <div class="intro-grid">
-
-      <div class="intro-text reveal">
-
-        <div class="eyebrow">
-          Our story
-        </div>
-
-        <h2 class="section-title">
-          A little place<br>
-          with a lot of heart.
-        </h2>
-
-        <p class="intro-copy">
-          Honey was created around a simple idea:
-          good coffee tastes better when there is nowhere
-          you need to rush to.
-
-          <br><br>
-
-          We bring together specialty coffee, seasonal food,
-          warm interiors and the kind of atmosphere that makes
-          you want to stay for one more cup.
-        </p>
-
-        <div class="intro-signature">
-          See you at Honey.
-        </div>
+        <a href="#reserve" class="button">
+          Reserve a Table
+        </a>
 
       </div>
 
+    </div>
 
-      <div class="intro-image reveal">
+  </section>
+
+
+  <!-- =======================================================
+       ABOUT
+  ======================================================== -->
+
+  <section class="section about" id="about">
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <span class="section-label">
+          Our Story
+        </span>
+
+        <h2 class="section-title">
+          Made for<br>
+          <em>slow moments.</em>
+        </h2>
+
+        <p>
+          Honey Café is a place to pause. Somewhere between your
+          first coffee and your last conversation, there is room
+          for something simple and beautiful.
+        </p>
+
+        <p>
+          We believe good food doesn't need to be complicated.
+          Good coffee doesn't need an occasion. And a café should
+          feel a little bit like somewhere you want to stay.
+        </p>
+
+      </div>
+
+      <div class="about-image">
 
         <img
-          src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1400&q=85"
-          alt="Honey Café interior"
+          src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1400&q=85"
+          alt="Coffee at Honey Café"
         >
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     MENU
-     ===================================================== -->
+  <!-- =======================================================
+       MENU
+  ======================================================== -->
 
-<section class="menu" id="menu">
+  <section class="menu-section" id="menu">
 
-  <div class="section-inner">
+    <div class="menu-intro">
 
-    <div class="menu-header reveal">
+      <span class="section-label">
+        The Menu
+      </span>
 
-      <div>
+      <h2 class="section-title">
+        Something for<br>
+        <em>every mood.</em>
+      </h2>
 
-        <div class="eyebrow">
-          What we're serving
-        </div>
-
-        <h2 class="section-title">
-          The menu.
-        </h2>
-
-      </div>
-
-      <p class="menu-note">
-        Seasonal ingredients, familiar favorites
-        and a few things you might not expect.
+      <p>
+        Simple ingredients, thoughtful combinations and things
+        worth staying for.
       </p>
 
     </div>
 
 
-    <div class="menu-grid">
+    <div class="menu-accordion">
 
 
-      <!-- COFFEE -->
+      <!-- ================= COFFEE ================= -->
 
-      <div class="menu-category reveal">
+      <div class="menu-category">
 
-        <h3 class="menu-category-title">
-          Coffee
-        </h3>
+        <button class="menu-category-btn" type="button">
+
+          <span>
+            <small>01</small>
+            Coffee
+          </span>
+
+          <span class="menu-plus">+</span>
+
+        </button>
 
 
-        <div class="menu-item">
+        <div class="menu-items">
 
-          <div>
+          <div class="menu-item">
 
-            <div class="menu-item-name">
-              Espresso
+            <div>
+              <h3>Espresso</h3>
+              <p>Rich and intense, served straight.</p>
             </div>
 
-            <div class="menu-item-description">
-              Rich, balanced & classic
-            </div>
+            <strong>֏1,500</strong>
 
           </div>
 
-          <div class="menu-price">
-            $3
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Flat White
+            <div>
+              <h3>Americano</h3>
+              <p>Espresso with hot water.</p>
             </div>
 
-            <div class="menu-item-description">
-              Double espresso, silky milk
-            </div>
+            <strong>֏1,800</strong>
 
           </div>
 
-          <div class="menu-price">
-            $5
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Honey Latte
+            <div>
+              <h3>Cappuccino</h3>
+              <p>Espresso, steamed milk and soft foam.</p>
             </div>
 
-            <div class="menu-item-description">
-              Espresso, steamed milk & honey
-            </div>
+            <strong>֏2,200</strong>
 
           </div>
 
-          <div class="menu-price">
-            $6
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Iced Matcha
+            <div>
+              <h3>Flat White</h3>
+              <p>Velvety milk with a double espresso.</p>
             </div>
 
-            <div class="menu-item-description">
-              Ceremonial matcha & cold milk
-            </div>
+            <strong>֏2,400</strong>
 
           </div>
 
-          <div class="menu-price">
-            $6
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-      </div>
-
-
-      <!-- BRUNCH -->
-
-      <div class="menu-category reveal">
-
-        <h3 class="menu-category-title">
-          Brunch
-        </h3>
-
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Honey Pancakes
+            <div>
+              <h3>Latte</h3>
+              <p>Smooth espresso with steamed milk.</p>
             </div>
 
-            <div class="menu-item-description">
-              Seasonal fruit, whipped cream
-            </div>
+            <strong>֏2,300</strong>
 
           </div>
 
-          <div class="menu-price">
-            $12
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Avocado Toast
+            <div>
+              <h3>Mocha</h3>
+              <p>Espresso, chocolate and steamed milk.</p>
             </div>
 
-            <div class="menu-item-description">
-              Sourdough, avocado, herbs & lemon
-            </div>
+            <strong>֏2,600</strong>
 
-          </div>
-
-          <div class="menu-price">
-            $11
-          </div>
-
-        </div>
-
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              French Toast
-            </div>
-
-            <div class="menu-item-description">
-              Brioche, berries & maple
-            </div>
-
-          </div>
-
-          <div class="menu-price">
-            $13
-          </div>
-
-        </div>
-
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Eggs & Toast
-            </div>
-
-            <div class="menu-item-description">
-              Farm eggs, sourdough & greens
-            </div>
-
-          </div>
-
-          <div class="menu-price">
-            $10
           </div>
 
         </div>
@@ -2048,73 +1166,69 @@ document.querySelectorAll(".menu-category-btn").forEach(button => {
       </div>
 
 
-      <!-- SWEETS -->
+      <!-- ================= COLD DRINKS ================= -->
 
-      <div class="menu-category reveal">
+      <div class="menu-category">
 
-        <h3 class="menu-category-title">
-          Sweet Things
-        </h3>
+        <button class="menu-category-btn" type="button">
+
+          <span>
+            <small>02</small>
+            Cold Drinks
+          </span>
+
+          <span class="menu-plus">+</span>
+
+        </button>
 
 
-        <div class="menu-item">
+        <div class="menu-items">
 
-          <div>
+          <div class="menu-item">
 
-            <div class="menu-item-name">
-              Honey Cake
+            <div>
+              <h3>Iced Americano</h3>
+              <p>Cold, refreshing and espresso-forward.</p>
             </div>
 
-            <div class="menu-item-description">
-              Layers of soft honey sponge
-            </div>
+            <strong>֏2,000</strong>
 
           </div>
 
-          <div class="menu-price">
-            $7
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Basque Cheesecake
+            <div>
+              <h3>Iced Latte</h3>
+              <p>Chilled espresso with creamy milk.</p>
             </div>
 
-            <div class="menu-item-description">
-              Creamy center, caramelized top
-            </div>
+            <strong>֏2,500</strong>
 
           </div>
 
-          <div class="menu-price">
-            $8
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Chocolate Cookie
+            <div>
+              <h3>Cold Brew</h3>
+              <p>Slow brewed for a smooth finish.</p>
             </div>
 
-            <div class="menu-item-description">
-              Dark chocolate & sea salt
-            </div>
+            <strong>֏2,400</strong>
 
           </div>
 
-          <div class="menu-price">
-            $4
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Fresh Lemonade</h3>
+              <p>Fresh lemon, water and a touch of sweetness.</p>
+            </div>
+
+            <strong>֏2,000</strong>
+
           </div>
 
         </div>
@@ -2122,579 +1236,624 @@ document.querySelectorAll(".menu-category-btn").forEach(button => {
       </div>
 
 
-      <!-- DRINKS -->
+      <!-- ================= BRUNCH ================= -->
 
-      <div class="menu-category reveal">
+      <div class="menu-category">
 
-        <h3 class="menu-category-title">
-          Something Else
-        </h3>
+        <button class="menu-category-btn" type="button">
+
+          <span>
+            <small>03</small>
+            Brunch
+          </span>
+
+          <span class="menu-plus">+</span>
+
+        </button>
 
 
-        <div class="menu-item">
+        <div class="menu-items">
 
-          <div>
+          <div class="menu-item">
 
-            <div class="menu-item-name">
-              Fresh Lemonade
+            <div>
+              <h3>Avocado Toast</h3>
+              <p>Sourdough, avocado, herbs and poached egg.</p>
             </div>
 
-            <div class="menu-item-description">
-              Lemon, mint & sparkling water
-            </div>
+            <strong>֏4,800</strong>
 
           </div>
 
-          <div class="menu-price">
-            $5
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Chai Latte
+            <div>
+              <h3>Eggs Benedict</h3>
+              <p>Poached eggs, brioche and creamy hollandaise.</p>
             </div>
 
-            <div class="menu-item-description">
-              Spiced tea & steamed milk
-            </div>
+            <strong>֏5,500</strong>
 
           </div>
 
-          <div class="menu-price">
-            $6
-          </div>
 
-        </div>
+          <div class="menu-item">
 
-
-        <div class="menu-item">
-
-          <div>
-
-            <div class="menu-item-name">
-              Seasonal Tonic
+            <div>
+              <h3>Honey Pancakes</h3>
+              <p>Fluffy pancakes with honey and seasonal fruit.</p>
             </div>
 
-            <div class="menu-item-description">
-              Ask what's pouring today
-            </div>
+            <strong>֏4,500</strong>
 
           </div>
 
-          <div class="menu-price">
-            $5
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Granola Bowl</h3>
+              <p>Yogurt, house granola, berries and honey.</p>
+            </div>
+
+            <strong>֏4,200</strong>
+
           </div>
 
         </div>
 
       </div>
+
+
+      <!-- ================= SWEET THINGS ================= -->
+
+      <div class="menu-category">
+
+        <button class="menu-category-btn" type="button">
+
+          <span>
+            <small>04</small>
+            Sweet Things
+          </span>
+
+          <span class="menu-plus">+</span>
+
+        </button>
+
+
+        <div class="menu-items">
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Honey Cake</h3>
+              <p>Soft layers with delicate honey cream.</p>
+            </div>
+
+            <strong>֏2,800</strong>
+
+          </div>
+
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Chocolate Tart</h3>
+              <p>Dark chocolate ganache on a buttery crust.</p>
+            </div>
+
+            <strong>֏3,000</strong>
+
+          </div>
+
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Cheesecake</h3>
+              <p>Creamy cheesecake with seasonal topping.</p>
+            </div>
+
+            <strong>֏3,200</strong>
+
+          </div>
+
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Cookie of the Day</h3>
+              <p>Freshly baked and soft in the center.</p>
+            </div>
+
+            <strong>֏1,500</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= TEA ================= -->
+
+      <div class="menu-category">
+
+        <button class="menu-category-btn" type="button">
+
+          <span>
+            <small>05</small>
+            Tea
+          </span>
+
+          <span class="menu-plus">+</span>
+
+        </button>
+
+
+        <div class="menu-items">
+
+          <div class="menu-item">
+
+            <div>
+              <h3>English Breakfast</h3>
+              <p>Classic black tea with a rich body.</p>
+            </div>
+
+            <strong>֏1,800</strong>
+
+          </div>
+
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Earl Grey</h3>
+              <p>Black tea with delicate bergamot.</p>
+            </div>
+
+            <strong>֏1,900</strong>
+
+          </div>
+
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Green Tea</h3>
+              <p>Light, fresh and aromatic.</p>
+            </div>
+
+            <strong>֏1,800</strong>
+
+          </div>
+
+
+          <div class="menu-item">
+
+            <div>
+              <h3>Fresh Mint Tea</h3>
+              <p>Fresh mint leaves with hot water.</p>
+            </div>
+
+            <strong>֏1,700</strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     FEATURE
-     ===================================================== -->
+  <!-- =======================================================
+       FEATURE IMAGE
+  ======================================================== -->
 
-<section class="feature">
+  <section class="feature-image">
 
-  <div class="feature-content reveal">
+    <div class="feature-content">
 
-    <div class="eyebrow" style="color:#e7c98d;">
-      Made slowly
+      <span class="section-label" style="color:#e0bd91;">
+        The Honey Moment
+      </span>
+
+      <h2 class="section-title">
+        Stay for<br>
+        <em>one more.</em>
+      </h2>
+
+      <p>
+        One more coffee. One more story. One more slice of cake.
+        Some moments are better when they last a little longer.
+      </p>
+
     </div>
 
-    <h2 class="feature-title">
-      Come for coffee.<br>
-      Stay for the feeling.
-    </h2>
-
-    <p class="feature-copy">
-      Every detail at Honey is designed to make
-      an ordinary day feel a little more special.
-    </p>
-
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     GALLERY
-     ===================================================== -->
+  <!-- =======================================================
+       GALLERY
+  ======================================================== -->
 
-<section class="gallery" id="gallery">
+  <section class="gallery-section" id="gallery">
 
-  <div class="section-inner">
+    <div class="gallery-heading">
 
-    <div class="gallery-header reveal">
+      <span class="section-label">
+        Inside Honey
+      </span>
 
-      <div>
-
-        <div class="eyebrow">
-          Around Honey
-        </div>
-
-        <h2 class="section-title">
-          A space to stay.
-        </h2>
-
-      </div>
+      <h2 class="section-title">
+        A little look<br>
+        <em>around.</em>
+      </h2>
 
     </div>
 
 
     <div class="gallery-grid">
 
-      <div class="gallery-item large reveal">
+      <div class="gallery-item">
 
         <img
-          src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=1600&q=85"
-          alt="Coffee at Honey Café"
+          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85"
+          alt="Honey Café interior"
+          loading="lazy"
         >
 
       </div>
 
 
-      <div class="gallery-item reveal">
+      <div class="gallery-item">
 
         <img
-          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1000&q=85"
+          src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=85"
+          alt="Café table"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"
+          alt="Coffee"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85"
           alt="Café interior"
+          loading="lazy"
         >
 
       </div>
 
 
-      <div class="gallery-item reveal">
+      <div class="gallery-item">
 
         <img
-          src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1000&q=85"
-          alt="Coffee and pastry"
+          src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=85"
+          alt="Restaurant table"
+          loading="lazy"
         >
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     REVIEWS
-     ===================================================== -->
+  <!-- =======================================================
+       REVIEWS
+  ======================================================== -->
 
-<section class="reviews">
+  <section class="section reviews">
 
-  <div class="section-inner">
+    <div class="reviews-heading">
 
-    <div class="eyebrow">
-      Kind words
+      <span class="section-label">
+        Kind Words
+      </span>
+
+      <h2 class="section-title">
+        People who<br>
+        <em>stayed awhile.</em>
+      </h2>
+
     </div>
-
-    <h2 class="section-title">
-      What people say.
-    </h2>
 
 
     <div class="reviews-grid">
 
 
-      <div class="review reveal">
+      <div class="review">
 
-        <div class="review-stars">
-          ★★★★★
+        <div>
+
+          <div class="review-mark">
+            “
+          </div>
+
+          <p>
+            The kind of place where you order one coffee
+            and somehow spend three hours.
+          </p>
+
         </div>
 
-        <p class="review-text">
-          “The kind of café where you come
-          for one coffee and somehow stay
-          for three hours.”
-        </p>
-
-        <div class="review-author">
-          — Anna
-        </div>
-
-      </div>
-
-
-      <div class="review reveal">
-
-        <div class="review-stars">
-          ★★★★★
-        </div>
-
-        <p class="review-text">
-          “Beautiful space, incredible coffee,
-          and the honey latte is officially
-          my new favorite.”
-        </p>
-
-        <div class="review-author">
-          — David
+        <div class="review-name">
+          Anna
         </div>
 
       </div>
 
 
-      <div class="review reveal">
+      <div class="review">
 
-        <div class="review-stars">
-          ★★★★★
+        <div>
+
+          <div class="review-mark">
+            “
+          </div>
+
+          <p>
+            Beautiful atmosphere, thoughtful food and
+            genuinely good coffee. A lovely little escape.
+          </p>
+
         </div>
 
-        <p class="review-text">
-          “Warm, calm and exactly the kind
-          of place Yerevan needed.”
-        </p>
-
-        <div class="review-author">
-          — Mari
+        <div class="review-name">
+          David
         </div>
 
       </div>
+
+
+      <div class="review">
+
+        <div>
+
+          <div class="review-mark">
+            “
+          </div>
+
+          <p>
+            My favorite kind of café — warm, quiet and
+            just special enough.
+          </p>
+
+        </div>
+
+        <div class="review-name">
+          Mari
+        </div>
+
+      </div>
+
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     RESERVATION
-     ===================================================== -->
+  <!-- =======================================================
+       RESERVATION
+  ======================================================== -->
 
-<section class="reservation" id="reservation">
-
-  <div class="section-inner">
+  <section class="section reservation" id="reserve">
 
     <div class="reservation-grid">
 
 
-      <div class="reveal">
+      <div class="reservation-text">
 
-        <div class="eyebrow">
-          Your table awaits
-        </div>
+        <span class="section-label">
+          Reservations
+        </span>
 
         <h2 class="section-title">
-          Save<br>
-          your seat.
+          Save a table<br>
+          <em>for later.</em>
         </h2>
 
-        <p class="reservation-description">
-          Planning brunch, a coffee date or a
-          slow afternoon with friends?
-          Send us a reservation request.
+        <p>
+          Planning brunch, a coffee date or a slow afternoon
+          with friends? Send us your details and we'll get back
+          to you.
         </p>
-
-
-        <div class="reservation-info">
-
-          <div class="info-row">
-
-            <span class="info-label">
-              Phone
-            </span>
-
-            <span>
-              +374 00 000 000
-            </span>
-
-          </div>
-
-
-          <div class="info-row">
-
-            <span class="info-label">
-              Email
-            </span>
-
-            <span>
-              hello@honeycafe.am
-            </span>
-
-          </div>
-
-        </div>
 
       </div>
 
 
-      <form
-        class="reservation-form reveal"
-        onsubmit="submitReservation(event)"
-      >
+      <form class="reservation-form" id="reservationForm">
 
-        <div class="field">
-
-          <label>
-            Name
-          </label>
+        <div class="form-row">
 
           <input
             type="text"
+            class="field"
             placeholder="Your name"
             required
           >
 
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Email
-          </label>
-
           <input
-            type="email"
-            placeholder="Your email"
+            type="tel"
+            class="field"
+            placeholder="Phone number"
             required
           >
 
         </div>
 
 
-        <div class="field">
-
-          <label>
-            Date
-          </label>
+        <div class="form-row">
 
           <input
             type="date"
+            class="field"
+            required
+          >
+
+          <input
+            type="time"
+            class="field"
             required
           >
 
         </div>
 
 
-        <div class="field">
+        <div class="form-row">
 
-          <label>
-            Time
-          </label>
-
-          <select required>
-
-            <option value="">
-              Select time
-            </option>
-
-            <option>
-              10:00 AM
-            </option>
-
-            <option>
-              12:00 PM
-            </option>
-
-            <option>
-              2:00 PM
-            </option>
-
-            <option>
-              4:00 PM
-            </option>
-
-            <option>
-              6:00 PM
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Guests
-          </label>
-
-          <select required>
+          <select class="field">
 
             <option value="">
               Number of guests
             </option>
 
-            <option>
-              1
-            </option>
-
-            <option>
-              2
-            </option>
-
-            <option>
-              3
-            </option>
-
-            <option>
-              4
-            </option>
-
-            <option>
-              5+
-            </option>
+            <option>1 person</option>
+            <option>2 people</option>
+            <option>3 people</option>
+            <option>4 people</option>
+            <option>5 people</option>
+            <option>6+ people</option>
 
           </select>
 
-        </div>
-
-
-        <div class="field">
-
-          <label>
-            Occasion
-          </label>
-
           <input
-            type="text"
-            placeholder="Optional"
+            type="email"
+            class="field"
+            placeholder="Email address"
           >
 
         </div>
 
 
-        <div class="field full">
-
-          <label>
-            Note
-          </label>
-
-          <textarea
-            placeholder="Anything we should know?"
-          ></textarea>
-
-        </div>
+        <textarea
+          class="field"
+          placeholder="Anything we should know?"
+        ></textarea>
 
 
-        <div class="field full">
-
-          <button
-            type="submit"
-            class="submit-button"
-          >
-            Request a Reservation
-          </button>
-
-        </div>
+        <button
+          type="submit"
+          class="button button-dark"
+        >
+          Request a Table
+        </button>
 
       </form>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =====================================================
-     LOCATION
-     ===================================================== -->
+  <!-- =======================================================
+       VISIT
+  ======================================================== -->
 
-<section class="location" id="visit">
+  <section class="section visit" id="visit">
 
-  <div class="section-inner">
-
-    <div class="location-grid">
+    <div class="visit-grid">
 
 
-      <div class="location-map reveal"></div>
+      <div>
 
-
-      <div class="location-content reveal">
-
-        <div class="eyebrow">
-          Come say hello
-        </div>
+        <span class="section-label">
+          Come Say Hello
+        </span>
 
         <h2 class="section-title">
-          Find us.
+          Find us<br>
+          <em>in Yerevan.</em>
         </h2>
 
-        <div class="address">
-          12 Abovyan Street<br>
-          Yerevan, Armenia
-        </div>
+
+        <div class="visit-details">
 
 
-        <div class="hours">
+          <div>
 
-          <div class="hours-row">
-
-            <span>
-              Monday — Friday
+            <span class="detail-label">
+              Address
             </span>
 
-            <span>
-              08:00 — 22:00
-            </span>
+            <div class="detail-value">
+              12 Abovyan Street
+            </div>
+
+            <div class="detail-value">
+              Yerevan, Armenia
+            </div>
 
           </div>
 
 
-          <div class="hours-row">
+          <div>
 
-            <span>
-              Saturday
+            <span class="detail-label">
+              Opening Hours
             </span>
 
-            <span>
-              09:00 — 23:00
-            </span>
+            <div class="detail-value">
+              Mon — Sun · 08:00 — 23:00
+            </div>
 
           </div>
 
 
-          <div class="hours-row">
+          <div>
 
-            <span>
-              Sunday
+            <span class="detail-label">
+              Contact
             </span>
 
-            <span>
-              09:00 — 21:00
-            </span>
+            <div class="detail-value">
+              +374 00 000 000
+            </div>
+
+            <div class="detail-value">
+              hello@honeycafe.am
+            </div>
 
           </div>
+
 
         </div>
 
       </div>
 
+
+      <div class="visit-map"></div>
+
     </div>
 
-  </div>
-
-</section>
-
-</main>
+  </section>
 
 
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
-<footer>
-
-  <div class="footer-inner">
+  <footer>
 
     <div class="footer-top">
 
@@ -2702,67 +1861,42 @@ document.querySelectorAll(".menu-category-btn").forEach(button => {
       <div>
 
         <div class="footer-logo">
-          Honey
+          Honey Café
         </div>
 
         <p class="footer-tagline">
-          Coffee, brunch, good people
-          and a place to slow down.
+          Coffee, brunch and sweet moments
+          in the heart of Yerevan.
         </p>
 
       </div>
 
 
-      <div>
+      <div class="footer-links">
 
-        <div class="footer-heading">
-          Explore
-        </div>
 
-        <div class="footer-links">
+        <div class="footer-column">
 
-          <a href="#about">
-            About
-          </a>
+          <span>Explore</span>
 
-          <a href="#menu">
-            Menu
-          </a>
-
-          <a href="#gallery">
-            Gallery
-          </a>
-
-          <a href="#reservation">
-            Reservations
-          </a>
+          <a href="#about">About</a>
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#reserve">Reservations</a>
 
         </div>
 
-      </div>
 
+        <div class="footer-column">
 
-      <div>
+          <span>Follow</span>
 
-        <div class="footer-heading">
-          Follow along
-        </div>
-
-        <div class="footer-links">
-
-          <a href="#">
-            Instagram
-          </a>
-
-          <a href="#">
-            Facebook
-          </a>
-
-          <a href="mailto:hello@honeycafe.am">
-            Email us
-          </a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
 
         </div>
+
 
       </div>
 
@@ -2776,129 +1910,165 @@ document.querySelectorAll(".menu-category-btn").forEach(button => {
       </span>
 
       <span>
-        Made for slow mornings.
+        Made with coffee & honey.
       </span>
 
     </div>
 
-  </div>
-
-</footer>
+  </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
 
-<script>
+  <script>
 
-  /* =====================================================
-     SCROLL REVEAL
-     ===================================================== */
+    /* =====================================================
+       MENU ACCORDION
+    ===================================================== */
 
-  const revealElements =
-    document.querySelectorAll(".reveal");
+    const menuButtons =
+      document.querySelectorAll(".menu-category-btn");
 
+    menuButtons.forEach(button => {
 
-  const revealObserver =
-    new IntersectionObserver(
-      (entries) => {
+      button.addEventListener("click", function() {
 
-        entries.forEach((entry) => {
+        const category =
+          this.closest(".menu-category");
 
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            revealObserver.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.12
-      }
-    );
+        const isOpen =
+          category.classList.contains("active");
 
 
-  revealElements.forEach((element) => {
+        /* Close every category */
 
-    revealObserver.observe(element);
+        document
+          .querySelectorAll(".menu-category")
+          .forEach(item => {
 
-  });
+            item.classList.remove("active");
 
-
-  /* =====================================================
-     RESERVATION FORM
-     ===================================================== */
-
-  function submitReservation(event) {
-
-    event.preventDefault();
-
-    const button =
-      event.target.querySelector(
-        ".submit-button"
-      );
-
-    button.textContent =
-      "Reservation Request Sent";
-
-    button.style.background =
-      "#c99545";
-
-    setTimeout(() => {
-
-      button.textContent =
-        "Request a Reservation";
-
-      button.style.background =
-        "";
-
-      event.target.reset();
-
-    }, 3500);
-
-  }
+          });
 
 
-  /* =====================================================
-     NAVIGATION — CLOSE MOBILE LINKS IF NEEDED
-     ===================================================== */
+        /* Open clicked category */
 
-  document
-    .querySelectorAll('a[href^="#"]')
-    .forEach((link) => {
+        if (!isOpen) {
 
-      link.addEventListener(
-        "click",
-        function(event) {
-
-          const target =
-            document.querySelector(
-              this.getAttribute("href")
-            );
-
-          if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-              behavior: "smooth"
-            });
-
-          }
+          category.classList.add("active");
 
         }
-      );
+
+      });
 
     });
 
-</script>
+
+    /* =====================================================
+       RESERVATION FORM
+    ===================================================== */
+
+    const reservationForm =
+      document.getElementById("reservationForm");
+
+    reservationForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      alert(
+        "Thank you! Your reservation request has been received."
+      );
+
+      reservationForm.reset();
+
+    });
+
+
+    /* =====================================================
+       SIMPLE SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+      document.querySelectorAll(
+        ".about-text, .about-image, .menu-category, .gallery-item, .review, .reservation-text, .reservation-form"
+      );
+
+
+    revealElements.forEach(element => {
+
+      element.style.opacity = "0";
+      element.style.transform = "translateY(25px)";
+      element.style.transition =
+        "opacity .8s ease, transform .8s ease";
+
+    });
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.style.opacity = "1";
+              entry.target.style.transform =
+                "translateY(0)";
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", function(event) {
+
+        const target =
+          document.querySelector(
+            this.getAttribute("href")
+          );
+
+        if (target) {
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
 
 </body>
 </html>
