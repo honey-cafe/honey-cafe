@@ -435,97 +435,517 @@
     }
 
 
-    /* =====================================================
-       MENU
-       ===================================================== */
+   <!-- =========================
+     MENU
+========================= -->
+<section class="menu-section" id="menu">
+  <div class="section-heading">
+    <span class="eyebrow">THE MENU</span>
+    <h2>Something for<br><em>every mood.</em></h2>
+    <p>Simple ingredients, thoughtful combinations, and things worth staying for.</p>
+  </div>
 
-    .menu {
-      background: var(--cream);
-    }
+  <div class="menu-accordion">
 
-    .menu-header {
-      display: flex;
+    <!-- COFFEE -->
+    <div class="menu-category">
+      <button class="menu-category-btn" type="button">
+        <span>
+          <small>01</small>
+          Coffee
+        </span>
+        <span class="menu-plus">+</span>
+      </button>
 
-      justify-content: space-between;
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <h3>Espresso</h3>
+            <p>Rich and intense, served straight.</p>
+          </div>
+          <strong>֏1,500</strong>
+        </div>
 
-      align-items: end;
+        <div class="menu-item">
+          <div>
+            <h3>Americano</h3>
+            <p>Espresso with hot water.</p>
+          </div>
+          <strong>֏1,800</strong>
+        </div>
 
-      margin-bottom: 65px;
-    }
+        <div class="menu-item">
+          <div>
+            <h3>Cappuccino</h3>
+            <p>Espresso, steamed milk and soft foam.</p>
+          </div>
+          <strong>֏2,200</strong>
+        </div>
 
-    .menu-note {
-      max-width: 260px;
+        <div class="menu-item">
+          <div>
+            <h3>Flat White</h3>
+            <p>Velvety milk with a double espresso.</p>
+          </div>
+          <strong>֏2,400</strong>
+        </div>
 
-      font-size: 12px;
+        <div class="menu-item">
+          <div>
+            <h3>Latte</h3>
+            <p>Smooth espresso with steamed milk.</p>
+          </div>
+          <strong>֏2,300</strong>
+        </div>
 
-      line-height: 1.7;
+        <div class="menu-item">
+          <div>
+            <h3>Mocha</h3>
+            <p>Espresso, chocolate and steamed milk.</p>
+          </div>
+          <strong>֏2,600</strong>
+        </div>
+      </div>
+    </div>
 
-      color: var(--brown-soft);
-    }
 
-    .menu-grid {
-      display: grid;
+    <!-- COLD DRINKS -->
+    <div class="menu-category">
+      <button class="menu-category-btn" type="button">
+        <span>
+          <small>02</small>
+          Cold Drinks
+        </span>
+        <span class="menu-plus">+</span>
+      </button>
 
-      grid-template-columns: repeat(2, 1fr);
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <h3>Iced Americano</h3>
+            <p>Cold, refreshing and espresso-forward.</p>
+          </div>
+          <strong>֏2,000</strong>
+        </div>
 
-      column-gap: 90px;
-      row-gap: 0;
-    }
+        <div class="menu-item">
+          <div>
+            <h3>Iced Latte</h3>
+            <p>Chilled espresso with creamy milk.</p>
+          </div>
+          <strong>֏2,500</strong>
+        </div>
 
-    .menu-category {
-      margin-bottom: 60px;
-    }
+        <div class="menu-item">
+          <div>
+            <h3>Cold Brew</h3>
+            <p>Slow brewed for a smooth finish.</p>
+          </div>
+          <strong>֏2,400</strong>
+        </div>
 
-    .menu-category-title {
-      font-family: "Playfair Display", serif;
+        <div class="menu-item">
+          <div>
+            <h3>Fresh Lemonade</h3>
+            <p>Fresh lemon, water and a touch of sweetness.</p>
+          </div>
+          <strong>֏2,000</strong>
+        </div>
+      </div>
+    </div>
 
-      font-size: 28px;
 
-      font-weight: 400;
+    <!-- BRUNCH -->
+    <div class="menu-category">
+      <button class="menu-category-btn" type="button">
+        <span>
+          <small>03</small>
+          Brunch
+        </span>
+        <span class="menu-plus">+</span>
+      </button>
 
-      padding-bottom: 17px;
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <h3>Avocado Toast</h3>
+            <p>Sourdough, avocado, herbs and poached egg.</p>
+          </div>
+          <strong>֏4,800</strong>
+        </div>
 
-      border-bottom: 1px solid var(--line);
+        <div class="menu-item">
+          <div>
+            <h3>Eggs Benedict</h3>
+            <p>Poached eggs, brioche and creamy hollandaise.</p>
+          </div>
+          <strong>֏5,500</strong>
+        </div>
 
-      margin-bottom: 10px;
-    }
+        <div class="menu-item">
+          <div>
+            <h3>Honey Pancakes</h3>
+            <p>Fluffy pancakes with honey and seasonal fruit.</p>
+          </div>
+          <strong>֏4,500</strong>
+        </div>
 
-    .menu-item {
-      display: flex;
+        <div class="menu-item">
+          <div>
+            <h3>Granola Bowl</h3>
+            <p>Yogurt, house granola, berries and honey.</p>
+          </div>
+          <strong>֏4,200</strong>
+        </div>
+      </div>
+    </div>
 
-      justify-content: space-between;
 
-      gap: 30px;
+    <!-- SWEET THINGS -->
+    <div class="menu-category">
+      <button class="menu-category-btn" type="button">
+        <span>
+          <small>04</small>
+          Sweet Things
+        </span>
+        <span class="menu-plus">+</span>
+      </button>
 
-      padding: 19px 0;
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <h3>Honey Cake</h3>
+            <p>Soft layers with delicate honey cream.</p>
+          </div>
+          <strong>֏2,800</strong>
+        </div>
 
-      border-bottom: 1px solid var(--line);
-    }
+        <div class="menu-item">
+          <div>
+            <h3>Chocolate Tart</h3>
+            <p>Dark chocolate ganache on a buttery crust.</p>
+          </div>
+          <strong>֏3,000</strong>
+        </div>
 
-    .menu-item-name {
-      font-size: 13px;
+        <div class="menu-item">
+          <div>
+            <h3>Cheesecake</h3>
+            <p>Creamy cheesecake with seasonal topping.</p>
+          </div>
+          <strong>֏3,200</strong>
+        </div>
 
-      font-weight: 500;
+        <div class="menu-item">
+          <div>
+            <h3>Cookie of the Day</h3>
+            <p>Freshly baked, soft in the center.</p>
+          </div>
+          <strong>֏1,500</strong>
+        </div>
+      </div>
+    </div>
 
-      margin-bottom: 5px;
-    }
 
-    .menu-item-description {
-      font-size: 11px;
+    <!-- TEA -->
+    <div class="menu-category">
+      <button class="menu-category-btn" type="button">
+        <span>
+          <small>05</small>
+          Tea
+        </span>
+        <span class="menu-plus">+</span>
+      </button>
 
-      color: var(--brown-soft);
+      <div class="menu-items">
+        <div class="menu-item">
+          <div>
+            <h3>English Breakfast</h3>
+            <p>Classic black tea with a rich body.</p>
+          </div>
+          <strong>֏1,800</strong>
+        </div>
 
-      line-height: 1.5;
-    }
+        <div class="menu-item">
+          <div>
+            <h3>Earl Grey</h3>
+            <p>Black tea with delicate bergamot.</p>
+          </div>
+          <strong>֏1,900</strong>
+        </div>
 
-    .menu-price {
-      font-family: "Playfair Display", serif;
+        <div class="menu-item">
+          <div>
+            <h3>Green Tea</h3>
+            <p>Light, fresh and aromatic.</p>
+          </div>
+          <strong>֏1,800</strong>
+        </div>
 
-      font-size: 16px;
+        <div class="menu-item">
+          <div>
+            <h3>Fresh Mint Tea</h3>
+            <p>Fresh mint leaves with hot water.</p>
+          </div>
+          <strong>֏1,700</strong>
+        </div>
+      </div>
+    </div>
 
-      white-space: nowrap;
-    }
+  </div>
+</section>
 
+
+<!-- =========================
+     MENU CSS
+========================= -->
+<style>
+
+.menu-section {
+  padding: 140px 7vw;
+  background: #f7f1e7;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 70px;
+}
+
+.section-heading .eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9a7550;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: .95;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.section-heading h2 em {
+  font-weight: 400;
+}
+
+.section-heading p {
+  max-width: 500px;
+  margin-top: 30px;
+  color: #71675c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* ACCORDION */
+
+.menu-accordion {
+  max-width: 1100px;
+  border-top: 1px solid rgba(55, 42, 30, .25);
+}
+
+.menu-category {
+  border-bottom: 1px solid rgba(55, 42, 30, .25);
+}
+
+
+/* CATEGORY BUTTON */
+
+.menu-category-btn {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 30px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  color: #33271d;
+}
+
+.menu-category-btn span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 400;
+}
+
+.menu-category-btn small {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: #a88768;
+}
+
+
+/* PLUS */
+
+.menu-plus {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #8c735d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 200;
+  transition: transform .4s ease, background .3s ease, color .3s ease;
+}
+
+.menu-category-btn:hover .menu-plus {
+  background: #33271d;
+  color: #fff;
+}
+
+.menu-category.active .menu-plus {
+  transform: rotate(45deg);
+}
+
+
+/* HIDDEN MENU */
+
+.menu-items {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height .6s ease,
+    opacity .4s ease,
+    padding .5s ease;
+}
+
+
+/* OPEN MENU */
+
+.menu-category.active .menu-items {
+  max-height: 1000px;
+  opacity: 1;
+  padding-bottom: 25px;
+}
+
+
+/* MENU ITEM */
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 25px 5px;
+  border-top: 1px solid rgba(55, 42, 30, .12);
+}
+
+.menu-item h3 {
+  margin: 0 0 7px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.menu-item p {
+  margin: 0;
+  color: #81766a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.menu-item strong {
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 500;
+  color: #8b623b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .menu-section {
+    padding: 90px 6vw;
+  }
+
+  .section-heading {
+    margin-bottom: 45px;
+  }
+
+  .menu-category-btn {
+    padding: 24px 0;
+  }
+
+  .menu-category-btn span:first-child {
+    gap: 15px;
+    font-size: 30px;
+  }
+
+  .menu-plus {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .menu-item {
+    align-items: flex-start;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .menu-item h3 {
+    font-size: 19px;
+  }
+
+  .menu-item p {
+    font-size: 12px;
+  }
+
+  .menu-item strong {
+    font-size: 14px;
+  }
+}
+
+</style>
+  
+ 
+<!-- =========================
+     MENU JAVASCRIPT
+========================= -->
+<script>
+
+document.querySelectorAll(".menu-category-btn").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const category = button.parentElement;
+
+    /* Close other categories */
+    document.querySelectorAll(".menu-category").forEach(item => {
+      if (item !== category) {
+        item.classList.remove("active");
+      }
+    });
+
+    /* Open / close clicked category */
+    category.classList.toggle("active");
+
+  });
+
+});
+
+</script>
+      
+
+     
+   
 
     /* =====================================================
        FEATURED IMAGE
